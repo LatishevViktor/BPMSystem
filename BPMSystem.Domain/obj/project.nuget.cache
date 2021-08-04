@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZPFMOYQJHq/gsa4TjsIljbCywqvWTVpYBdU7dLuH5ChA8SkiDcB/xBMrEsQeqm4beUyhHdJzS7aPpFqhC6n55g==",
+  "dgSpecHash": "Ab4TSSyDn8wEPChqlCcX/jeW/G+xj4IjpJAGfFEHHtWQJvV1TGlKr7II1Yti+bUhdnY88EawQNumCzPZvcIfJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MyPC\\Desktop\\BpmSystem\\BPMSystem\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
+  "projectFilePath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

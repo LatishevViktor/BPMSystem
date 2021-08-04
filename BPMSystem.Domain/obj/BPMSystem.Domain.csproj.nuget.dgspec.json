@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MyPC\\Desktop\\BpmSystem\\BPMSystem\\BPMSystem.Domain\\BPMSystem.Domain.csproj": {}
+    "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MyPC\\Desktop\\BpmSystem\\BPMSystem\\BPMSystem.Domain\\BPMSystem.Domain.csproj": {
+    "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MyPC\\Desktop\\BpmSystem\\BPMSystem\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
         "projectName": "BPMSystem.Domain",
-        "projectPath": "C:\\Users\\MyPC\\Desktop\\BpmSystem\\BPMSystem\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
+        "projectPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
         "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MyPC\\Desktop\\BpmSystem\\BPMSystem\\BPMSystem.Domain\\obj\\",
+        "outputPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
