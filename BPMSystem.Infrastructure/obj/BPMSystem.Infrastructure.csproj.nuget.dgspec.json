@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj": {}
+    "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Infrastructure\\BPMSystem.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj": {
+    "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Infrastructure\\BPMSystem.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
-        "projectName": "BPMSystem.Domain",
-        "projectPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Infrastructure\\BPMSystem.Infrastructure.csproj",
+        "projectName": "BPMSystem.Infrastructure",
+        "projectPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Infrastructure\\BPMSystem.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\obj\\",
+        "outputPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -44,22 +44,6 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.8, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.8, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.8, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

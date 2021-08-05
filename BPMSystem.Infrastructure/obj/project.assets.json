@@ -168,6 +168,18 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Tools/5.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "5.0.8"
+        },
+        "compile": {
+          "lib/netstandard2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/_._": {}
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -1507,6 +1519,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "BPMSystem.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/BPMSystem.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BPMSystem.Domain.dll": {}
+        }
       }
     }
   },
@@ -1760,6 +1782,30 @@
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.xml",
         "microsoft.entityframeworkcore.sqlserver.5.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Tools/5.0.8": {
+      "sha512": "gINPFTfwmYXSz2Chn4eAxoC5AJmM0qtSMPtU0evLqLoIZ8E4jAxrBTwRIt2p/42Fczqav/V3tR6yXlq4tAAGiQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.tools/5.0.8",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.1/_._",
+        "microsoft.entityframeworkcore.tools.5.0.8.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.nuspec",
+        "tools/EntityFrameworkCore.PS2.psd1",
+        "tools/EntityFrameworkCore.PS2.psm1",
+        "tools/EntityFrameworkCore.psd1",
+        "tools/EntityFrameworkCore.psm1",
+        "tools/about_EntityFrameworkCore.help.txt",
+        "tools/init.ps1",
+        "tools/net461/any/ef.exe",
+        "tools/net461/win-x86/ef.exe",
+        "tools/netcoreapp2.0/any/ef.dll",
+        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
@@ -5751,13 +5797,20 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "BPMSystem.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BPMSystem.Domain/BPMSystem.Domain.csproj",
+      "msbuildProject": "../BPMSystem.Domain/BPMSystem.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "BPMSystem.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.8",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.8"
     ]
   },
   "packageFolders": {
@@ -5767,11 +5820,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
-      "projectName": "BPMSystem.Domain",
-      "projectPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Infrastructure\\BPMSystem.Persistance.csproj",
+      "projectName": "BPMSystem.Persistance",
+      "projectPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Infrastructure\\BPMSystem.Persistance.csproj",
       "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\obj\\",
+      "outputPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5792,7 +5845,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj": {
+              "projectPath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -5816,6 +5873,12 @@
             "version": "[5.0.8, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[5.0.8, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.8, )"
           }

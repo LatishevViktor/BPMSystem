@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mNHzXLOspZorNx9s/sQe6dIlky3msGcq0sIQY0gGBe5Bp6mDS7Ixcr1IVDoEP/Fudk03Lz8UmTMNP7MG3vXS+g==",
+  "dgSpecHash": "Nuo6xGcs4J9cjYF6mOZiJHY9QP89EsJCSj9LlkF1Htbt+moozqRqTXagBmJY3sKl8Lj7744KCvnmQm5Sj6TmhQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Domain\\BPMSystem.Domain.csproj",
+  "projectFilePath": "C:\\Users\\MyPC\\Desktop\\Приложение управления бизнес-процессами\\BPMSystem.Infrastructure\\BPMSystem.Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MyPC\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -14,6 +14,7 @@
     "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.8\\microsoft.entityframeworkcore.design.5.0.8.nupkg.sha512",
     "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.8\\microsoft.entityframeworkcore.relational.5.0.8.nupkg.sha512",
     "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.8\\microsoft.entityframeworkcore.sqlserver.5.0.8.nupkg.sha512",
+    "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.8\\microsoft.entityframeworkcore.tools.5.0.8.nupkg.sha512",
     "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
