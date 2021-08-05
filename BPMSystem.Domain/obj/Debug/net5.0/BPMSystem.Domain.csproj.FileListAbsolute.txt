@@ -1,0 +1,12 @@
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\bin\Debug\net5.0\BPMSystem.Domain.deps.json
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\bin\Debug\net5.0\BPMSystem.Domain.dll
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\bin\Debug\net5.0\ref\BPMSystem.Domain.dll
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\bin\Debug\net5.0\BPMSystem.Domain.pdb
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\obj\Debug\net5.0\BPMSystem.Domain.csproj.AssemblyReference.cache
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\obj\Debug\net5.0\BPMSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\obj\Debug\net5.0\BPMSystem.Domain.AssemblyInfoInputs.cache
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\obj\Debug\net5.0\BPMSystem.Domain.AssemblyInfo.cs
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\obj\Debug\net5.0\BPMSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\obj\Debug\net5.0\BPMSystem.Domain.dll
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\obj\Debug\net5.0\ref\BPMSystem.Domain.dll
+C:\Users\MyPC\Desktop\Приложение управления бизнес-процессами\BPMSystem.Domain\obj\Debug\net5.0\BPMSystem.Domain.pdb
