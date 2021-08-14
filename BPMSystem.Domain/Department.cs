@@ -20,7 +20,7 @@ namespace BPMSystem.Domain
         /// </summary>
         public string DepartmentHead { get; set; }
         /// <summary>
-        /// Внутренний номер
+        /// Внутренний номер отдела
         /// </summary>
         public int ExtensionNumber { get; set; }
     }
