@@ -1,0 +1,11 @@
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\bin\Debug\net5.0\BPMSystem.Infrastructure.Services.deps.json
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\bin\Debug\net5.0\BPMSystem.Infrastructure.Services.dll
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\bin\Debug\net5.0\ref\BPMSystem.Infrastructure.Services.dll
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\bin\Debug\net5.0\BPMSystem.Infrastructure.Services.pdb
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\obj\Debug\net5.0\BPMSystem.Infrastructure.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\obj\Debug\net5.0\BPMSystem.Infrastructure.Services.AssemblyInfoInputs.cache
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\obj\Debug\net5.0\BPMSystem.Infrastructure.Services.AssemblyInfo.cs
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\obj\Debug\net5.0\BPMSystem.Infrastructure.Services.csproj.CoreCompileInputs.cache
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\obj\Debug\net5.0\BPMSystem.Infrastructure.Services.dll
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\obj\Debug\net5.0\ref\BPMSystem.Infrastructure.Services.dll
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Services\obj\Debug\net5.0\BPMSystem.Infrastructure.Services.pdb
