@@ -1,0 +1,15 @@
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\bin\Debug\net5.0\BPMSystem.BLL.deps.json
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\bin\Debug\net5.0\BPMSystem.BLL.dll
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\bin\Debug\net5.0\ref\BPMSystem.BLL.dll
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\bin\Debug\net5.0\BPMSystem.BLL.pdb
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\bin\Debug\net5.0\BPMSystem.DAL.dll
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\bin\Debug\net5.0\BPMSystem.DAL.pdb
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\obj\Debug\net5.0\BPMSystem.BLL.csproj.AssemblyReference.cache
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\obj\Debug\net5.0\BPMSystem.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\obj\Debug\net5.0\BPMSystem.BLL.AssemblyInfoInputs.cache
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\obj\Debug\net5.0\BPMSystem.BLL.AssemblyInfo.cs
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\obj\Debug\net5.0\BPMSystem.BLL.csproj.CoreCompileInputs.cache
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\obj\Debug\net5.0\BPMSystem.BLL.csproj.CopyComplete
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\obj\Debug\net5.0\BPMSystem.BLL.dll
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\obj\Debug\net5.0\ref\BPMSystem.BLL.dll
+C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.BLL\obj\Debug\net5.0\BPMSystem.BLL.pdb
