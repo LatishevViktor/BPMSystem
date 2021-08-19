@@ -76,7 +76,6 @@ namespace Services.BPMSystemBLL.Services
             // Маппинг данных
             var dtoList = depList.Select(dep => new DtoDepartment
             {
-                Id = dep.Id,
                 Name = dep.Name,
                 ExtensionNumber = dep.ExtensionNumber
             });
