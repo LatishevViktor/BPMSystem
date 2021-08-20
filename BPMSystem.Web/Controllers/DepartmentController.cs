@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace BPMSystem.Web.Controllers
 {
-    [Route("api/department")]
+    [Route("api/[controller]")]
     public class DepartmentController : Controller
     {
         private readonly IDepartmentService _departmentservice;
@@ -65,7 +65,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateDepartment(DtoDepartment dtoDepartment)
+        public async Task<IActionResult> UpdateDepartment([FromBody]DtoDepartment dtoDepartment)
         {
             try
             {

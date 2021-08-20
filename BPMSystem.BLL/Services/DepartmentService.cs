@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace Services.BPMSystemBLL.Services
 {
-    public class DepartmentServices : IDepartmentService
+    public class DepartmentService : IDepartmentService
     {
         private readonly IDepartmentRepository _repository;
-        public DepartmentServices(IDepartmentRepository repository)
+        public DepartmentService(IDepartmentRepository repository)
         {
             _repository = repository;
         }
@@ -43,10 +43,7 @@ namespace Services.BPMSystemBLL.Services
                 await _repository.CreateDepartment(department);
             }
 
-            catch(Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception ex) { throw ex; }
         }
 
         public async Task DeleteDepartment(Guid id)
@@ -55,10 +52,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 await _repository.DeleteDepartment(id);
             }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception ex) { throw ex; }
         }
 
         public async Task<IEnumerable<DtoDepartment>> GetAllDepartment()
@@ -68,17 +62,15 @@ namespace Services.BPMSystemBLL.Services
             {
                 depList = await _repository.GetAllDepartment();
             }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception ex) { throw ex; }
 
             // Маппинг данных
             var dtoList = depList.Select(dep => new DtoDepartment
             {
+                Id = dep.Id,
                 Name = dep.Name,
                 ExtensionNumber = dep.ExtensionNumber
-            });
+            }).ToList();
 
             return dtoList.ToList();
         }
@@ -90,10 +82,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 department = await _repository.GetDepartment(id);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception ex) { throw ex; }
 
             var dtoDepartment = new DtoDepartment
             {
@@ -118,10 +107,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 await _repository.UpdateDepartment(department);
             }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception ex) { throw ex; }
         }
     }
 }

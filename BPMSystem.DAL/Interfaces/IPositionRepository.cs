@@ -13,7 +13,7 @@ namespace BPMSystem.DAL.Interfaces
         /// Получение список всех должностей
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Position>> GetAllPosition();
+        Task<List<Position>> GetAllPosition();
         /// <summary>
         /// Получение должности
         /// </summary>
