@@ -13,7 +13,7 @@ namespace BPMSystem.DAL.Interfaces
         /// Получение всех сотрудников
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Employee>> GetAllEmployee();
+        Task<List<Employee>> GetAllEmployee();
         /// <summary>
         /// Получение одного сотрудника
         /// </summary>
