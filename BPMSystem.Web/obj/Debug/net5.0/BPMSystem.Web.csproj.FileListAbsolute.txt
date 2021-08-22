@@ -62,4 +62,3 @@ C:\Users\MyPC\Desktop\Проект по созданию систему упра
 C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Web\obj\Debug\net5.0\ref\BPMSystem.Web.dll
 C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Web\obj\Debug\net5.0\BPMSystem.Web.pdb
 C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Web\obj\Debug\net5.0\BPMSystem.Web.genruntimeconfig.cache
-C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.Web\obj\Debug\net5.0\BPMSystem.Web.MvcApplicationPartsAssemblyInfo.cs

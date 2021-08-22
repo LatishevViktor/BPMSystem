@@ -18,6 +18,7 @@ using BPMSystem.DAL.Interfaces;
 using BPMSystem.DAL.Repositories;
 using BPMSystem.BLL.Interfaces;
 using Services.BPMSystemBLL.Services;
+using BPMSystem.BLL.Services;
 
 namespace BPMSystem.Web
 {
@@ -48,6 +49,9 @@ namespace BPMSystem.Web
 
             services.AddScoped<IPositionRepository, PositionRepository>();
             services.AddScoped<IPositionService, PositionService>();
+
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

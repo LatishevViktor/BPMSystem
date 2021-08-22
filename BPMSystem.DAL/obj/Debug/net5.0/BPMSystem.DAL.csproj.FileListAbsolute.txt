@@ -12,4 +12,3 @@ C:\Users\MyPC\Desktop\Проект по созданию систему упра
 C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\ref\BPMSystem.DAL.dll
 C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.pdb
 C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.genruntimeconfig.cache
-C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.csproj.AssemblyReference.cache
