@@ -49,7 +49,7 @@ namespace BPMSystem.BLL.DTO.Employee
         /// <summary>
         /// Внешний ключ на Id отдела
         /// </summary>
-        //[ForeignKey(nameof(Department))]
+        [ForeignKey(nameof(Department))]
         public Guid DepartmentId { get; set; }
 
         /// <summary>

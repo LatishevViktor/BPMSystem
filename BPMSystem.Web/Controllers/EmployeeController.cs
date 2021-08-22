@@ -1,4 +1,7 @@
-﻿using BPMSystem.BLL.Interfaces;
+﻿using BPMSystem.BLL.DTO.Employee;
+using BPMSystem.BLL.DTO.Employees;
+using BPMSystem.BLL.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -27,5 +30,42 @@ namespace BPMSystem.Web.Controllers
             }
             catch(Exception ex) { throw ex; }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateEmployee([FromBody] DtoCreateEmployee createEmployee)
+        {
+            try
+            {
+                await _service.CreateEmployee(createEmployee);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEmployee(Guid id)
+        {
+            try
+            {
+                await _service.DeleteEmployee(id);
+                return Ok();
+            }
+            catch(Exception ex) { throw ex; }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateEmployee(DtoEmployee dtoEmployee)
+        {
+            try
+            {
+                await _service.UpdateEmployee(dtoEmployee);
+                return Ok();
+            }
+            catch(Exception ex) { throw ex; }
+        }
+
     }
 }

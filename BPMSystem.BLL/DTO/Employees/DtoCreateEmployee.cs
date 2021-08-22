@@ -41,7 +41,7 @@ namespace BPMSystem.BLL.DTO.Employees
         /// <summary>
         /// Должность, навигационное свойство 
         /// </summary>
-        public BPMSystem.DAL.Entities.Position Position { get; set; }
+        //public BPMSystem.DAL.Entities.Position Position { get; set; }
 
         /// <summary>
         /// Внешний ключ на Id отдела
@@ -52,6 +52,6 @@ namespace BPMSystem.BLL.DTO.Employees
         /// <summary>
         /// Навигационное свойство отдела
         /// </summary>
-        public Department Department { get; set; }
+        //public Department Department { get; set; }
     }
 }
