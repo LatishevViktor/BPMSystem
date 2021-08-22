@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace BPMSystem.BLL.DTO.Employees
 {
+    /// <summary>
+    /// DTO модель для создания сотрудника
+    /// </summary>
     public class DtoCreateEmployee
     {
         public string FirstName { get; set; }
@@ -39,19 +42,9 @@ namespace BPMSystem.BLL.DTO.Employees
         public Guid PositionId { get; set; }
 
         /// <summary>
-        /// Должность, навигационное свойство 
-        /// </summary>
-        //public BPMSystem.DAL.Entities.Position Position { get; set; }
-
-        /// <summary>
         /// Внешний ключ на Id отдела
         /// </summary>
         [ForeignKey(nameof(Department))]
         public Guid DepartmentId { get; set; }
-
-        /// <summary>
-        /// Навигационное свойство отдела
-        /// </summary>
-        //public Department Department { get; set; }
     }
 }
