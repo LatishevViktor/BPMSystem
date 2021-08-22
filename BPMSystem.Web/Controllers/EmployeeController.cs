@@ -31,6 +31,17 @@ namespace BPMSystem.Web.Controllers
             catch(Exception ex) { throw ex; }
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<DtoEmployee>> GetEmployee(Guid id)
+        {
+            try
+            {
+                var employee = await _service.GetEmployee(id);
+                return Ok(employee);
+            }
+            catch(Exception ex) { throw ex; }
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateEmployee([FromBody] DtoCreateEmployee createEmployee)
         {
