@@ -36,6 +36,7 @@ namespace BPMSystem.BLL.Services
                 LastName = dtoEmployee.LastName,
                 PersonNumber = dtoEmployee.PersonNumber,
                 DateOfBirth = dtoEmployee.DateOfBirth,
+                EditDate = null,
                 WorkExperience = dtoEmployee.WorkExperience,
                 DepartmentId = dtoEmployee.DepartmentId,
                 PositionId = dtoEmployee.PositionId
@@ -70,6 +71,7 @@ namespace BPMSystem.BLL.Services
                 LastName = emp.LastName,
                 PersonNumber = emp.PersonNumber,
                 DateOfBirth = emp.DateOfBirth,
+                EditDate = emp.EditDate,
                 WorkExperience = emp.WorkExperience,
                 Department = emp.Department,
                 DepartmentId = emp.DepartmentId,
@@ -97,6 +99,7 @@ namespace BPMSystem.BLL.Services
                 LastName = employee.LastName,
                 PersonNumber = employee.PersonNumber,
                 DateOfBirth = employee.DateOfBirth,
+                EditDate = employee.EditDate,
                 WorkExperience = employee.WorkExperience,
                 Department = employee.Department,
                 DepartmentId = employee.DepartmentId,
@@ -116,6 +119,7 @@ namespace BPMSystem.BLL.Services
                 LastName = dtoEmployee.LastName,
                 PersonNumber = dtoEmployee.PersonNumber,
                 DateOfBirth = dtoEmployee.DateOfBirth,
+                EditDate = DateTime.Now,
                 WorkExperience = dtoEmployee.WorkExperience,
                 DepartmentId = dtoEmployee.DepartmentId,
                 PositionId = dtoEmployee.PositionId

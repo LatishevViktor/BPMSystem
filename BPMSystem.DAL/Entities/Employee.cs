@@ -28,8 +28,12 @@ namespace BPMSystem.DAL.Entities
         /// <summary>
         /// Дата рождения работника
         /// </summary>
-        public DateTime? DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
+        /// <summary>
+        /// Дата изменеия данных работника
+        /// </summary>
+        public DateTime? EditDate { get; set; }
         /// <summary>
         /// Опыт работы
         /// </summary>

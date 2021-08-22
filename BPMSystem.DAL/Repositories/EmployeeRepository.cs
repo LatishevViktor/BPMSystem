@@ -74,6 +74,7 @@ namespace BPMSystem.DAL.Repositories
             emp.PositionId = employee.PositionId;
             emp.WorkExperience = employee.WorkExperience;
             emp.DateOfBirth = employee.DateOfBirth;
+            emp.EditDate = employee.EditDate;
             emp.DepartmentId = employee.DepartmentId;
 
             await _context.SaveChangesAsync();

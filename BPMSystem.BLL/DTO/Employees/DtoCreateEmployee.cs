@@ -23,7 +23,12 @@ namespace BPMSystem.BLL.DTO.Employees
         /// <summary>
         /// Дата рождения работника
         /// </summary>
-        public DateTime? DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
+
+        /// <summary>
+        /// Дата изменеия данных работника
+        /// </summary>
+        public DateTime? EditData { get; set; }
 
         /// <summary>
         /// Опыт работы
