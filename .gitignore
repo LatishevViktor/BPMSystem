@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/BPMSystem.BLL/obj
+/BPMSystem.DAL/obj
+/BPMSystem.Web/obj
+/.vs
