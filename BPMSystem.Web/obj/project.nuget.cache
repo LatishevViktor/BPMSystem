@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2RzgKdON8OA9QMMpZVCQgOs0JWmv2wN5wT1AsX0H5nJb5AykPQh8MiwUBz2cQqBJ+BYijblFGHk4bOvj76hFlA==",
+  "dgSpecHash": "7ZANrCQwExAqZCSIwNWsWfsqIApKzxoc64nlXeseifa9zqPOPT9C0ThNAO5kOgkaYC1me7KQ7j/fbEhy/coSTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.Web\\BPMSystem.Web.csproj",
+  "projectFilePath": "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.Web\\BPMSystem.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MyPC\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

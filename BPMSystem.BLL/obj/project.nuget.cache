@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YUp4ooVGuAwuUlKdeTdDbgnq6a5B3gNK7exXVh4VEg0St5RxI700k3tTn3PnxpxpoG82siBDGn1V7JaJKSeKgg==",
+  "dgSpecHash": "jegtMjisoFzpimbwVIUnItiWC6YyxEKQnexU4SJ5mdOtR6Lu7nccBzoumrEzRIN+WPW0jflilWpVA7PiqShk7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.BLL\\BPMSystem.BLL.csproj",
+  "projectFilePath": "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.BLL\\BPMSystem.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\MyPC\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

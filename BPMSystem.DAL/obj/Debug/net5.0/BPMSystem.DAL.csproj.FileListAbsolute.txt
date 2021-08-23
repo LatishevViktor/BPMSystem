@@ -12,3 +12,18 @@ C:\Users\MyPC\Desktop\Проект по созданию систему упра
 C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\ref\BPMSystem.DAL.dll
 C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.pdb
 C:\Users\MyPC\Desktop\Проект по созданию систему управления бизнес-процессами\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.genruntimeconfig.cache
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\bin\Debug\net5.0\BPMSystem.DAL.deps.json
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\bin\Debug\net5.0\BPMSystem.DAL.runtimeconfig.json
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\bin\Debug\net5.0\BPMSystem.DAL.runtimeconfig.dev.json
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\bin\Debug\net5.0\BPMSystem.DAL.dll
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\bin\Debug\net5.0\ref\BPMSystem.DAL.dll
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\bin\Debug\net5.0\BPMSystem.DAL.pdb
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.csproj.AssemblyReference.cache
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.AssemblyInfoInputs.cache
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.AssemblyInfo.cs
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.csproj.CoreCompileInputs.cache
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.dll
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\ref\BPMSystem.DAL.dll
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.pdb
+C:\Users\MyPC\Desktop\newFile\BPMSystem\BPMSystem.DAL\obj\Debug\net5.0\BPMSystem.DAL.genruntimeconfig.cache

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.BLL\\BPMSystem.BLL.csproj": {}
+    "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.BLL\\BPMSystem.BLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.BLL\\BPMSystem.BLL.csproj": {
+    "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.BLL\\BPMSystem.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.BLL\\BPMSystem.BLL.csproj",
+        "projectUniqueName": "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.BLL\\BPMSystem.BLL.csproj",
         "projectName": "BPMSystem.BLL",
-        "projectPath": "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.BLL\\BPMSystem.BLL.csproj",
+        "projectPath": "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.BLL\\BPMSystem.BLL.csproj",
         "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.BLL\\obj\\",
+        "outputPath": "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -33,8 +33,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.DAL\\BPMSystem.DAL.csproj": {
-                "projectPath": "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.DAL\\BPMSystem.DAL.csproj"
+              "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.DAL\\BPMSystem.DAL.csproj": {
+                "projectPath": "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.DAL\\BPMSystem.DAL.csproj"
               }
             }
           }
@@ -67,14 +67,14 @@
         }
       }
     },
-    "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.DAL\\BPMSystem.DAL.csproj": {
+    "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.DAL\\BPMSystem.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.DAL\\BPMSystem.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.DAL\\BPMSystem.DAL.csproj",
         "projectName": "BPMSystem.DAL",
-        "projectPath": "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.DAL\\BPMSystem.DAL.csproj",
+        "projectPath": "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.DAL\\BPMSystem.DAL.csproj",
         "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MyPC\\Desktop\\Проект по созданию систему управления бизнес-процессами\\BPMSystem\\BPMSystem.DAL\\obj\\",
+        "outputPath": "C:\\Users\\MyPC\\Desktop\\newFile\\BPMSystem\\BPMSystem.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
