@@ -1,5 +1,4 @@
-﻿using BPMSystem.BLL.DTO.Position;
-using BPMSystem.BLL.Interfaces;
+﻿using BPMSystem.BLL.Interfaces;
 using BPMSystem.DAL.Entities;
 using BPMSystem.DAL.Interfaces;
 using System;
@@ -17,24 +16,18 @@ namespace Services.BPMSystemBLL.Services
         {
             _repository = repository;
         }
-        public async Task CreatePosition(DtoCreatePosition dtoPosition)
+        public async Task CreatePosition(Position position)
         {
             List<Position> allPositions = await _repository.GetAllPosition();
 
             foreach(var pos in allPositions)
             {
-                if(pos.Name == dtoPosition.Name 
-                   && pos.Title == dtoPosition.Title)
+                if(pos.Name == position.Name 
+                   && pos.Title == position.Title)
                 {
                     throw new Exception("Такая должность уже существует");
                 }
             }
-
-            var position = new Position
-            {
-                Name = dtoPosition.Name,
-                Title = dtoPosition.Title
-            };
 
             try
             {
@@ -52,7 +45,7 @@ namespace Services.BPMSystemBLL.Services
             catch(Exception ex) { throw ex; }
         }
 
-        public async Task<IEnumerable<DtoPosition>> GetAllPosition()
+        public async Task<IEnumerable<Position>> GetAllPosition()
         {
             IEnumerable<Position> posList = new List<Position>();
             try
@@ -61,18 +54,10 @@ namespace Services.BPMSystemBLL.Services
             }
             catch(Exception ex) { throw ex; }
 
-            //Маппинг данных
-            var dtoPosList = posList.Select(pos => new DtoPosition
-            {
-                Id = pos.Id,
-                Name = pos.Name,
-                Title = pos.Title
-            }).ToList();
-
-            return dtoPosList;
+            return posList;
         }
 
-        public async Task<DtoPosition> GetPosition(Guid id)
+        public async Task<Position> GetPosition(Guid id)
         {
             Position position = new Position();
             try
@@ -81,25 +66,11 @@ namespace Services.BPMSystemBLL.Services
             }
             catch(Exception ex) { throw ex; }
 
-            var dtoPosition = new DtoPosition
-            {
-                Id = position.Id,
-                Name = position.Name,
-                Title = position.Title
-            };
-
-            return dtoPosition;
+            return position;
         }
 
-        public async Task UpdatePosition(DtoPosition dtoPosition)
+        public async Task UpdatePosition(Position position)
         {
-            var position = new Position
-            {
-                Id = dtoPosition.Id,
-                Name = dtoPosition.Name,
-                Title = dtoPosition.Title
-            };
-
             try
             {
                 await _repository.UpdatePosition(position);

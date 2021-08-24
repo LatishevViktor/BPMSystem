@@ -1,4 +1,4 @@
-﻿using BPMSystem.BLL.DTO.Position;
+﻿using BPMSystem.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,10 @@ namespace BPMSystem.BLL.Interfaces
 {
     public interface IPositionService
     {
-        Task<IEnumerable<DtoPosition>> GetAllPosition();
-        Task<DtoPosition> GetPosition(Guid id);
-        Task CreatePosition(DtoCreatePosition dtoPosition);
-        Task UpdatePosition(DtoPosition dtoPosition);
+        Task<IEnumerable<Position>> GetAllPosition();
+        Task<Position> GetPosition(Guid id);
+        Task CreatePosition(Position dtoPosition);
+        Task UpdatePosition(Position dtoPosition);
         Task DeletePosition(Guid id);
     }
 }

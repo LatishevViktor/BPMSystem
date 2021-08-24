@@ -1,14 +1,12 @@
 ﻿using BPMSystem.BLL.DTO;
 using BPMSystem.BLL.Interfaces;
-using BPMSystem.DAL.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using BPMSystem.DAL.Entities;
+using System.Linq;
 
 namespace BPMSystem.Web.Controllers
 {
@@ -22,10 +20,16 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateDepartment([FromBody]DtoCreateDepartment createDepartment)
+        public async Task<IActionResult> CreateDepartment([FromBody]DtoCreateDepartment createDtoDepartment)
         {
             try
             {
+                var createDepartment = new Department
+                {
+                    Name = createDtoDepartment.Name,
+                    ExtensionNumber = createDtoDepartment.ExtensionNumber
+                };
+
                 await _departmentservice.CreateDepartment(createDepartment);
                 return Ok();
             }
@@ -42,6 +46,14 @@ namespace BPMSystem.Web.Controllers
             {
                 var depList = await _departmentservice.GetAllDepartment();
 
+                // Маппинг данных
+                var dtoList = depList.Select(dep => new Department
+                {
+                    Id = dep.Id,
+                    Name = dep.Name,
+                    ExtensionNumber = dep.ExtensionNumber
+                }).ToList();
+
                 return Ok(depList);
             }
             catch(Exception ex)
@@ -52,11 +64,19 @@ namespace BPMSystem.Web.Controllers
 
         [HttpGet("{id}")]
         public async Task<ActionResult<DtoDepartment>> GetDepartment(Guid id)
-        {
+        { 
             try
             {
                 var department = await _departmentservice.GetDepartment(id);
-                return Ok(department);
+
+                var dtoDepartment = new Department
+                {
+                    Id = department.Id,
+                    Name = department.Name,
+                    ExtensionNumber = department.ExtensionNumber
+                };
+
+                return Ok(dtoDepartment);
             }
             catch(Exception ex)
             {
@@ -69,7 +89,14 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                await _departmentservice.UpdateDepartment(dtoDepartment);
+                var department = new Department
+                {
+                    Id = dtoDepartment.Id,
+                    Name = dtoDepartment.Name,
+                    ExtensionNumber = dtoDepartment.ExtensionNumber
+                };
+
+                await _departmentservice.UpdateDepartment(department);
                 return Ok();
             }
             catch(Exception ex)

@@ -1,6 +1,4 @@
-﻿using BPMSystem.BLL.DTO.Employee;
-using BPMSystem.BLL.DTO.Employees;
-using BPMSystem.BLL.Interfaces;
+﻿using BPMSystem.BLL.Interfaces;
 using BPMSystem.DAL.Entities;
 using BPMSystem.DAL.Interfaces;
 using System;
@@ -19,30 +17,21 @@ namespace BPMSystem.BLL.Services
             _repository = repository;      
         }
 
-        public async Task CreateEmployee(DtoCreateEmployee dtoEmployee)
+        public async Task CreateEmployee(Employee employee)
         {
             List<Employee> employeeList = await _repository.GetAllEmployee();
             foreach(var emp in employeeList)
             {
-                if(emp.PersonNumber == dtoEmployee.PersonNumber)
+                if(emp.PersonNumber == employee.PersonNumber)
                 {
                     throw new Exception("Такой сотрудник уже существует");
                 }
             }
-
-            var employee = new Employee
+            try
             {
-                FirstName = dtoEmployee.FirstName,
-                LastName = dtoEmployee.LastName,
-                PersonNumber = dtoEmployee.PersonNumber,
-                DateOfBirth = dtoEmployee.DateOfBirth,
-                EditDate = null,
-                WorkExperience = dtoEmployee.WorkExperience,
-                DepartmentId = dtoEmployee.DepartmentId,
-                PositionId = dtoEmployee.PositionId
-            };
-
-            await _repository.CreateEmployee(employee);
+                await _repository.CreateEmployee(employee);
+            }
+            catch(Exception ex) { throw ex; }
         }
 
         public async Task DeleteEmployee(Guid id)
@@ -54,7 +43,7 @@ namespace BPMSystem.BLL.Services
             catch (Exception ex) { throw ex; }
         }
 
-        public async Task<IEnumerable<DtoEmployee>> GetAllEmployee()
+        public async Task<IEnumerable<Employee>> GetAllEmployee()
         {
             IEnumerable<Employee> empList = new List<Employee>();
             try
@@ -63,26 +52,10 @@ namespace BPMSystem.BLL.Services
             }
             catch(Exception ex) { throw ex; }
 
-            //Маппинг данных
-            var dtoList = empList.Select(emp => new DtoEmployee
-            {
-                Id = emp.Id,
-                FirstName = emp.FirstName,
-                LastName = emp.LastName,
-                PersonNumber = emp.PersonNumber,
-                DateOfBirth = emp.DateOfBirth,
-                EditDate = emp.EditDate,
-                WorkExperience = emp.WorkExperience,
-                Department = emp.Department,
-                DepartmentId = emp.DepartmentId,
-                PositionId = emp.PositionId,
-                Position = emp.Position
-            });
-
-            return dtoList;
+            return empList;
         }
 
-        public async Task<DtoEmployee> GetEmployee(Guid id)
+        public async Task<Employee> GetEmployee(Guid id)
         {
             Employee employee = new Employee();
             try
@@ -91,40 +64,13 @@ namespace BPMSystem.BLL.Services
             }
             catch(Exception ex) { throw ex; }
 
-            //Мапипнг данных
-            var dtoEmp =  new DtoEmployee
-            {
-                Id = employee.Id,
-                FirstName = employee.FirstName,
-                LastName = employee.LastName,
-                PersonNumber = employee.PersonNumber,
-                DateOfBirth = employee.DateOfBirth,
-                EditDate = employee.EditDate,
-                WorkExperience = employee.WorkExperience,
-                Department = employee.Department,
-                DepartmentId = employee.DepartmentId,
-                PositionId = employee.PositionId,
-                Position = employee.Position
-            };
+            
 
-            return dtoEmp;
+            return employee;
         }
 
-        public async Task UpdateEmployee(DtoEmployee dtoEmployee)
+        public async Task UpdateEmployee(Employee employee)
         {
-            var employee = new Employee
-            {
-                Id = dtoEmployee.Id,
-                FirstName = dtoEmployee.FirstName,
-                LastName = dtoEmployee.LastName,
-                PersonNumber = dtoEmployee.PersonNumber,
-                DateOfBirth = dtoEmployee.DateOfBirth,
-                EditDate = DateTime.Now,
-                WorkExperience = dtoEmployee.WorkExperience,
-                DepartmentId = dtoEmployee.DepartmentId,
-                PositionId = dtoEmployee.PositionId
-            };
-
             try
             {
                 await _repository.UpdateEmployee(employee);
