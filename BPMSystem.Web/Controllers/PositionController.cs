@@ -1,5 +1,6 @@
 ﻿using BPMSystem.BLL.DTO.Position;
 using BPMSystem.BLL.Interfaces;
+using BPMSystem.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -23,8 +24,17 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                var resultList = await _service.GetAllPosition();
-                return Ok(resultList);
+                var posList = await _service.GetAllPosition();
+
+                //Маппинг данных
+                var dtoPosList = posList.Select(pos => new DtoPosition
+                {
+                    Id = pos.Id,
+                    Name = pos.Name,
+                    Title = pos.Title
+                }).ToList();
+
+                return Ok(dtoPosList);
             }
             catch (Exception ex) { throw ex; }
         }
@@ -35,7 +45,15 @@ namespace BPMSystem.Web.Controllers
             try
             {
                 var position = await _service.GetPosition(id);
-                return Ok(position);
+
+                var dtoPosition = new DtoPosition
+                {
+                    Id = position.Id,
+                    Name = position.Name,
+                    Title = position.Title
+                };
+
+                return Ok(dtoPosition);
             }
             catch(Exception ex) { throw ex; }
         }
@@ -45,7 +63,13 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                await _service.CreatePosition(dtoCreatePosition);
+                var position = new Position
+                {
+                    Name = dtoCreatePosition.Name,
+                    Title = dtoCreatePosition.Title
+                };
+
+                await _service.CreatePosition(position);
                 return Ok();
             }
             catch(Exception ex) { throw ex; }
@@ -56,7 +80,14 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                await _service.UpdatePosition(dtoPosition);
+                var position = new Position
+                {
+                    Id = dtoPosition.Id,
+                    Name = dtoPosition.Name,
+                    Title = dtoPosition.Title
+                };
+
+                await _service.UpdatePosition(position);
                 return Ok();
             }
             catch(Exception ex) { throw ex; }

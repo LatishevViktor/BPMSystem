@@ -1,6 +1,7 @@
 ﻿using BPMSystem.BLL.DTO.Employee;
 using BPMSystem.BLL.DTO.Employees;
 using BPMSystem.BLL.Interfaces;
+using BPMSystem.DAL.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -26,7 +27,24 @@ namespace BPMSystem.Web.Controllers
             try
             {
                 var empList = await _service.GetAllEmployee();
-                return Ok(empList);
+
+                //Маппинг данных
+                var dtoList = empList.Select(emp => new DtoEmployee
+                {
+                    Id = emp.Id,
+                    FirstName = emp.FirstName,
+                    LastName = emp.LastName,
+                    PersonNumber = emp.PersonNumber,
+                    DateOfBirth = emp.DateOfBirth,
+                    EditDate = emp.EditDate,
+                    WorkExperience = emp.WorkExperience,
+                    Department = emp.Department,
+                    DepartmentId = emp.DepartmentId,
+                    PositionId = emp.PositionId,
+                    Position = emp.Position
+                });
+
+                return Ok(dtoList);
             }
             catch(Exception ex) { throw ex; }
         }
@@ -37,17 +55,46 @@ namespace BPMSystem.Web.Controllers
             try
             {
                 var employee = await _service.GetEmployee(id);
-                return Ok(employee);
+
+                //Мапипнг данных
+                var dtoEmp = new DtoEmployee
+                {
+                    Id = employee.Id,
+                    FirstName = employee.FirstName,
+                    LastName = employee.LastName,
+                    PersonNumber = employee.PersonNumber,
+                    DateOfBirth = employee.DateOfBirth,
+                    EditDate = employee.EditDate,
+                    WorkExperience = employee.WorkExperience,
+                    Department = employee.Department,
+                    DepartmentId = employee.DepartmentId,
+                    PositionId = employee.PositionId,
+                    Position = employee.Position
+                };
+
+                return Ok(dtoEmp);
             }
             catch(Exception ex) { throw ex; }
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateEmployee([FromBody] DtoCreateEmployee createEmployee)
+        public async Task<IActionResult> CreateEmployee([FromBody] DtoCreateEmployee createDtoEmployee)
         {
             try
             {
-                await _service.CreateEmployee(createEmployee);
+                var employee = new Employee
+                {
+                    FirstName = createDtoEmployee.FirstName,
+                    LastName = createDtoEmployee.LastName,
+                    PersonNumber = createDtoEmployee.PersonNumber,
+                    DateOfBirth = createDtoEmployee.DateOfBirth,
+                    EditDate = null,
+                    WorkExperience = createDtoEmployee.WorkExperience,
+                    DepartmentId = createDtoEmployee.DepartmentId,
+                    PositionId = createDtoEmployee.PositionId
+                };
+
+                await _service.CreateEmployee(employee);
                 return Ok();
             }
             catch (Exception ex)
@@ -72,7 +119,20 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                await _service.UpdateEmployee(dtoEmployee);
+                var employee = new Employee
+                {
+                    Id = dtoEmployee.Id,
+                    FirstName = dtoEmployee.FirstName,
+                    LastName = dtoEmployee.LastName,
+                    PersonNumber = dtoEmployee.PersonNumber,
+                    DateOfBirth = dtoEmployee.DateOfBirth,
+                    EditDate = DateTime.Now,
+                    WorkExperience = dtoEmployee.WorkExperience,
+                    DepartmentId = dtoEmployee.DepartmentId,
+                    PositionId = dtoEmployee.PositionId
+                };
+
+                await _service.UpdateEmployee(employee);
                 return Ok();
             }
             catch(Exception ex) { throw ex; }

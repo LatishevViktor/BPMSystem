@@ -1,5 +1,4 @@
-﻿using BPMSystem.BLL.DTO;
-using BPMSystem.BLL.Interfaces;
+﻿using BPMSystem.BLL.Interfaces;
 using BPMSystem.DAL.Entities;
 using BPMSystem.DAL.Interfaces;
 using Microsoft.Extensions.Logging;
@@ -18,25 +17,19 @@ namespace Services.BPMSystemBLL.Services
         {
             _repository = repository;
         }
-        public async Task CreateDepartment(DtoCreateDepartment dtoDepartment)
+        public async Task CreateDepartment(Department department)
         {
             List<Department> allDepartment = await _repository.GetAllDepartment();
 
             // Проверяем есть существует ли отдел с таким же именем или внутренним номером
             foreach(var allDep in allDepartment)
             {
-                if(allDep.Name == dtoDepartment.Name
-                    || allDep.ExtensionNumber == dtoDepartment.ExtensionNumber)
+                if(allDep.Name == department.Name
+                    || allDep.ExtensionNumber == department.ExtensionNumber)
                 {
                     throw new Exception("Отдел с таким названием уже существует или регистрационным номером уже существует");
                 }
             }
-
-            var department = new Department
-            {
-                Name = dtoDepartment.Name,
-                ExtensionNumber = dtoDepartment.ExtensionNumber
-            };
 
             try
             {
@@ -55,7 +48,7 @@ namespace Services.BPMSystemBLL.Services
             catch (Exception ex) { throw ex; }
         }
 
-        public async Task<IEnumerable<DtoDepartment>> GetAllDepartment()
+        public async Task<IEnumerable<Department>> GetAllDepartment()
         {
             IEnumerable<Department> depList = new List<Department>();
             try
@@ -64,18 +57,10 @@ namespace Services.BPMSystemBLL.Services
             }
             catch (Exception ex) { throw ex; }
 
-            // Маппинг данных
-            var dtoList = depList.Select(dep => new DtoDepartment
-            {
-                Id = dep.Id,
-                Name = dep.Name,
-                ExtensionNumber = dep.ExtensionNumber
-            }).ToList();
-
-            return dtoList.ToList();
+            return depList.ToList();
         }
 
-        public async Task<DtoDepartment> GetDepartment(Guid id)
+        public async Task<Department> GetDepartment(Guid id)
         {
             Department department = new Department();
             try
@@ -84,25 +69,11 @@ namespace Services.BPMSystemBLL.Services
             }
             catch (Exception ex) { throw ex; }
 
-            var dtoDepartment = new DtoDepartment
-            {
-                Id = department.Id,
-                Name = department.Name,
-                ExtensionNumber = department.ExtensionNumber
-            };
-
-            return dtoDepartment;
+            return department;
         }
 
-        public async Task UpdateDepartment(DtoDepartment dtoDepartment)
+        public async Task UpdateDepartment(Department department)
         {
-            var department = new Department
-            {
-                Id = dtoDepartment.Id,
-                Name = dtoDepartment.Name,
-                ExtensionNumber = dtoDepartment.ExtensionNumber
-            };
-
             try
             {
                 await _repository.UpdateDepartment(department);
