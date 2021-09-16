@@ -42,7 +42,7 @@ namespace BPMSystem.DAL.Entities
         /// <summary>
         /// Табельный номер
         /// </summary>
-        public int PersonNumber { get; set; }
+        public string PersonNumber { get; set; }
 
         /// <summary>
         /// Идентификатор должности

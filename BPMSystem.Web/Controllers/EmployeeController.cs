@@ -82,7 +82,7 @@ namespace BPMSystem.Web.Controllers
                 {
                     FirstName = createDtoEmployee.FirstName,
                     LastName = createDtoEmployee.LastName,
-                    PersonNumber = createDtoEmployee.PersonNumber,
+                    //PersonNumber = createDtoEmployee.PersonNumber,
                     DateOfBirth = createDtoEmployee.DateOfBirth,
                     EditDate = null,
                     WorkExperience = createDtoEmployee.WorkExperience,

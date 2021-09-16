@@ -57,8 +57,8 @@ namespace BPMSystem.DAL.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PersonNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PersonNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("PositionId")
                         .HasColumnType("uniqueidentifier");
@@ -95,7 +95,7 @@ namespace BPMSystem.DAL.Migrations
             modelBuilder.Entity("BPMSystem.DAL.Entities.Employee", b =>
                 {
                     b.HasOne("BPMSystem.DAL.Entities.Department", "Department")
-                        .WithMany()
+                        .WithMany("Employees")
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -109,6 +109,11 @@ namespace BPMSystem.DAL.Migrations
                     b.Navigation("Department");
 
                     b.Navigation("Position");
+                });
+
+            modelBuilder.Entity("BPMSystem.DAL.Entities.Department", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }

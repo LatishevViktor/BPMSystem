@@ -19,8 +19,15 @@ namespace BPMSystem.BLL.Services
 
         public async Task CreateEmployee(Employee employee)
         {
+            var randomNumber = new Random().Next(100, 1000);
+
+            employee.PersonNumber = employee.FirstName.First().ToString()
+                           + employee.LastName.First().ToString() + "-"
+                           + randomNumber.ToString();
+
             List<Employee> employeeList = await _repository.GetAllEmployee();
-            foreach(var emp in employeeList)
+
+            foreach (var emp in employeeList)
             {
                 if(emp.PersonNumber == employee.PersonNumber)
                 {
@@ -29,6 +36,7 @@ namespace BPMSystem.BLL.Services
             }
             try
             {
+                
                 await _repository.CreateEmployee(employee);
             }
             catch(Exception ex) { throw ex; }
