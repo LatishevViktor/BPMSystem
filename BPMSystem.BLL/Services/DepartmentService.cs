@@ -13,9 +13,12 @@ namespace Services.BPMSystemBLL.Services
     public class DepartmentService : IDepartmentService
     {
         private readonly IDepartmentRepository _repository;
-        public DepartmentService(IDepartmentRepository repository)
+        private readonly IEmployeeRepository _employeeRepository;
+
+        public DepartmentService(IDepartmentRepository repository, IEmployeeRepository employeeRepository)
         {
             _repository = repository;
+            _employeeRepository = employeeRepository;
         }
         public async Task CreateDepartment(Department department)
         {
@@ -62,10 +65,14 @@ namespace Services.BPMSystemBLL.Services
 
         public async Task<Department> GetDepartment(Guid id)
         {
+            var empDep = await _employeeRepository.GetAllEmployee();
+
+            var resultEmp = empDep.Where(emp => emp.DepartmentId == id).ToList();
             Department department = new Department();
             try
             {
                 department = await _repository.GetDepartment(id);
+                department.Employees = resultEmp;
             }
             catch (Exception ex) { throw ex; }
 

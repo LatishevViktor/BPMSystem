@@ -73,7 +73,8 @@ namespace BPMSystem.Web.Controllers
                 {
                     Id = department.Id,
                     Name = department.Name,
-                    ExtensionNumber = department.ExtensionNumber
+                    ExtensionNumber = department.ExtensionNumber,
+                    Employees = department.Employees
                 };
 
                 return Ok(dtoDepartment);
