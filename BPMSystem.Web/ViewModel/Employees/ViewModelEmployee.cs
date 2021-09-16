@@ -1,6 +1,5 @@
 ﻿using BPMSystem.DAL.Entities;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -47,9 +46,9 @@ namespace BPMSystem.BLL.DTO.Employee
         public Guid PositionId { get; set; }
 
         /// <summary>
-        /// Должность, навигационное свойство 
+        /// Название должности
         /// </summary>
-        public BPMSystem.DAL.Entities.Position Position { get; set; }
+        public string PositionName { get; set; }
 
         /// <summary>
         /// Внешний ключ на Id отдела
@@ -58,8 +57,8 @@ namespace BPMSystem.BLL.DTO.Employee
         public Guid DepartmentId { get; set; }
 
         /// <summary>
-        /// Навигационное свойство отдела
+        /// Название отдела
         /// </summary>
-        public Department Department { get; set; }
+        public string DepartmentName { get; set; }
     }
 }
