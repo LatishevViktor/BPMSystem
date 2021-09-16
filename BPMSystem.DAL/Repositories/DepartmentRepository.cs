@@ -43,7 +43,9 @@ namespace BPMSystem.DAL.Repositories
 
         public async Task<Department> GetDepartment(Guid id)
         {
-            var dep = await _context.Departments.FirstOrDefaultAsync(dep => dep.Id == id);
+            var dep = await _context.Departments
+                                    .Include(emp => emp.Employees)
+                                    .FirstOrDefaultAsync(dep => dep.Id == id);
             if (dep == null)
             {
                 throw new ObjectNotFoundException();
