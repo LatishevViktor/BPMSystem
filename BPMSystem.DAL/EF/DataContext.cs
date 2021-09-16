@@ -16,14 +16,14 @@ namespace BPMSystem.DAL.EF
 
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //        string connectionString = "Server=DESKTOP-G0D1JK5\\LATYSHEVSERVER;Database=BPMSystemDB;Trusted_Connection=True;";
-        //        optionsBuilder.UseSqlServer(connectionString);
-        //    }
-        //    base.OnConfiguring(optionsBuilder);
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                string connectionString = "Server=DESKTOP-G0D1JK5\\LATYSHEVSERVER;Database=BPMSystemDB;Trusted_Connection=True;";
+                optionsBuilder.UseSqlServer(connectionString);
+            }
+            base.OnConfiguring(optionsBuilder);
+        }
     }
 }
