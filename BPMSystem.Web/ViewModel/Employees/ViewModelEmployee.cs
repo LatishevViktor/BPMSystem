@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BPMSystem.BLL.DTO.Employee
 {
-    public class DtoEmployee
+    public class ViewModelEmployee
     {
         [Key]
         public Guid Id { get; set; }

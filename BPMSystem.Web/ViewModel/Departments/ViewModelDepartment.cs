@@ -10,7 +10,7 @@ namespace BPMSystem.BLL.DTO
     /// <summary>
     /// DTO модель класса Department
     /// </summary>
-    public class DtoDepartment
+    public class ViewModelDepartment
     {
         [Key]
         public Guid Id { get; set; }

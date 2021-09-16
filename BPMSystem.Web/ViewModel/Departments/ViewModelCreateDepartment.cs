@@ -9,7 +9,7 @@ namespace BPMSystem.BLL.DTO
     /// <summary>
     /// DTO модель для создания отделов
     /// </summary>
-    public class DtoCreateDepartment
+    public class ViewModelCreateDepartment
     { 
         public string Name { get; set; }
 

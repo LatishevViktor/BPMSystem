@@ -9,7 +9,7 @@ namespace BPMSystem.BLL.DTO.Position
     /// <summary>
     /// DTO модель для создания должностей
     /// </summary>
-    public class DtoCreatePosition
+    public class ViewModelCreatePosition
     {
         /// <summary>
         /// Наименование должности
