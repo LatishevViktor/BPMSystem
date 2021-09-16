@@ -11,7 +11,7 @@ namespace BPMSystem.BLL.DTO.Employees
     /// <summary>
     /// DTO модель для создания сотрудника
     /// </summary>
-    public class DtoCreateEmployee
+    public class ViewModelCreateEmployee
     {
         public string FirstName { get; set; }
 

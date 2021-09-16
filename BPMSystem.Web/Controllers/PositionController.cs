@@ -59,7 +59,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreatePosition([FromBody] DtoCreatePosition dtoCreatePosition)
+        public async Task<IActionResult> CreatePosition([FromBody] ViewModelCreatePosition dtoCreatePosition)
         {
             try
             {

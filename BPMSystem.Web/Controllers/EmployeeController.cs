@@ -29,7 +29,7 @@ namespace BPMSystem.Web.Controllers
                 var empList = await _service.GetAllEmployee();
 
                 //Маппинг данных
-                var dtoList = empList.Select(emp => new DtoEmployee
+                var dtoList = empList.Select(emp => new ViewModelEmployee
                 {
                     Id = emp.Id,
                     FirstName = emp.FirstName,
@@ -50,14 +50,14 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<DtoEmployee>> GetEmployee(Guid id)
+        public async Task<ActionResult<ViewModelEmployee>> GetEmployee(Guid id)
         {
             try
             {
                 var employee = await _service.GetEmployee(id);
 
                 //Мапипнг данных
-                var dtoEmp = new DtoEmployee
+                var dtoEmp = new ViewModelEmployee
                 {
                     Id = employee.Id,
                     FirstName = employee.FirstName,
@@ -78,7 +78,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateEmployee([FromBody] DtoCreateEmployee createDtoEmployee)
+        public async Task<IActionResult> CreateEmployee([FromBody] ViewModelCreateEmployee createDtoEmployee)
         {
             try
             {
@@ -115,7 +115,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateEmployee(DtoEmployee dtoEmployee)
+        public async Task<IActionResult> UpdateEmployee(ViewModelEmployee dtoEmployee)
         {
             try
             {

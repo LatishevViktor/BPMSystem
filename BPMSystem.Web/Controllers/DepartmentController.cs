@@ -20,7 +20,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateDepartment([FromBody]DtoCreateDepartment createDtoDepartment)
+        public async Task<IActionResult> CreateDepartment([FromBody]ViewModelCreateDepartment createDtoDepartment)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<DtoDepartment>> GetDepartment(Guid id)
+        public async Task<ActionResult<ViewModelDepartment>> GetDepartment(Guid id)
         { 
             try
             {
@@ -86,7 +86,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateDepartment([FromBody]DtoDepartment dtoDepartment)
+        public async Task<IActionResult> UpdateDepartment([FromBody]ViewModelDepartment dtoDepartment)
         {
             try
             {
