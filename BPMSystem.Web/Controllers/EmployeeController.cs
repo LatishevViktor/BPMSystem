@@ -38,10 +38,8 @@ namespace BPMSystem.Web.Controllers
                     DateOfBirth = emp.DateOfBirth,
                     EditDate = emp.EditDate,
                     WorkExperience = emp.WorkExperience,
-                    Department = emp.Department,
-                    DepartmentId = emp.DepartmentId,
-                    PositionId = emp.PositionId,
-                    Position = emp.Position
+                    DepartmentName = emp.Department.Name,
+                    PositionName = emp.Position.Name
                 });
 
                 return Ok(dtoList);
@@ -66,10 +64,8 @@ namespace BPMSystem.Web.Controllers
                     DateOfBirth = employee.DateOfBirth,
                     EditDate = employee.EditDate,
                     WorkExperience = employee.WorkExperience,
-                    Department = employee.Department,
-                    DepartmentId = employee.DepartmentId,
-                    PositionId = employee.PositionId,
-                    Position = employee.Position
+                    DepartmentName = employee.Department.Name,
+                    PositionName = employee.Position.Name
                 };
 
                 return Ok(dtoEmp);
