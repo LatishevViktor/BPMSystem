@@ -10,9 +10,8 @@ namespace BPMSystem.BLL.DTO.Position
     /// <summary>
     /// DTO модель для получения должностей
     /// </summary>
-    public class DtoPosition
+    public class ViewModelPosition
     {
-        [Key]
         public Guid Id { get; set; }
         /// <summary>
         /// Наименование должности
