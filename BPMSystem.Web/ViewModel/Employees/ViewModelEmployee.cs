@@ -7,7 +7,6 @@ namespace BPMSystem.BLL.DTO.Employee
 {
     public class ViewModelEmployee
     {
-        [Key]
         public Guid Id { get; set; }
         /// <summary>
         /// Имя работника

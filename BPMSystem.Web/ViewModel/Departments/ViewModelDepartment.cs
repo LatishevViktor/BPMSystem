@@ -12,7 +12,6 @@ namespace BPMSystem.BLL.DTO
     /// </summary>
     public class ViewModelDepartment
     {
-        [Key]
         public Guid Id { get; set; }
         /// <summary>
         /// Наименование отдела

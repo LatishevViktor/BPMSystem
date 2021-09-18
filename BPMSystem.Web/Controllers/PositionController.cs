@@ -27,7 +27,7 @@ namespace BPMSystem.Web.Controllers
                 var posList = await _service.GetAllPosition();
 
                 //Маппинг данных
-                var dtoPosList = posList.Select(pos => new DtoPosition
+                var dtoPosList = posList.Select(pos => new ViewModelPosition
                 {
                     Id = pos.Id,
                     Name = pos.Name,
@@ -40,13 +40,13 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<DtoPosition>> GetPosition(Guid id)
+        public async Task<ActionResult<ViewModelPosition>> GetPosition(Guid id)
         {
             try
             {
                 var position = await _service.GetPosition(id);
 
-                var dtoPosition = new DtoPosition
+                var dtoPosition = new ViewModelPosition
                 {
                     Id = position.Id,
                     Name = position.Name,
@@ -76,7 +76,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdatePosition([FromBody]DtoPosition dtoPosition)
+        public async Task<IActionResult> UpdatePosition([FromBody] ViewModelPosition dtoPosition)
         {
             try
             {

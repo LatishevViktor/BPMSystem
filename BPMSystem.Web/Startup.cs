@@ -40,14 +40,14 @@ namespace BPMSystem.Web
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BPMSystem.Web", Version = "v1" });
             });
 
-            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
-            services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddTransient<IDepartmentRepository, DepartmentRepository>();
+            services.AddTransient<IDepartmentService, DepartmentService>();
 
-            services.AddScoped<IPositionRepository, PositionRepository>();
-            services.AddScoped<IPositionService, PositionService>();
+            services.AddTransient<IPositionRepository, PositionRepository>();
+            services.AddTransient<IPositionService, PositionService>();
 
-            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IEmployeeService, EmployeeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
