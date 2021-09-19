@@ -20,14 +20,14 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateDepartment([FromBody]ViewModelCreateDepartment createDtoDepartment)
+        public async Task<IActionResult> CreateDepartment([FromBody]ViewModelCreateDepartment createViewModelDepartment)
         {
             try
             {
                 var createDepartment = new Department
                 {
-                    Name = createDtoDepartment.Name,
-                    ExtensionNumber = createDtoDepartment.ExtensionNumber
+                    Name = createViewModelDepartment.Name,
+                    ExtensionNumber = createViewModelDepartment.ExtensionNumber
                 };
 
                 await _departmentservice.CreateDepartment(createDepartment);
@@ -35,7 +35,7 @@ namespace BPMSystem.Web.Controllers
             }
             catch(Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -47,7 +47,7 @@ namespace BPMSystem.Web.Controllers
                 var depList = await _departmentservice.GetAllDepartment();
 
                 // Маппинг данных
-                var dtoList = depList.Select(dep => new Department
+                var dtoList = depList.Select(dep => new ViewModelDepartment
                 {
                     Id = dep.Id,
                     Name = dep.Name,
@@ -69,7 +69,7 @@ namespace BPMSystem.Web.Controllers
             {
                 var department = await _departmentservice.GetDepartment(id);
 
-                var dtoDepartment = new Department
+                var viewModelDepartment = new ViewModelDepartment
                 {
                     Id = department.Id,
                     Name = department.Name,
@@ -77,7 +77,7 @@ namespace BPMSystem.Web.Controllers
                     Employees = department.Employees
                 };
 
-                return Ok(dtoDepartment);
+                return Ok(viewModelDepartment);
             }
             catch(Exception ex)
             {
@@ -86,15 +86,15 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateDepartment([FromBody]ViewModelDepartment dtoDepartment)
+        public async Task<IActionResult> UpdateDepartment([FromBody]ViewModelDepartment viewModelDepartment)
         {
             try
             {
                 var department = new Department
                 {
-                    Id = dtoDepartment.Id,
-                    Name = dtoDepartment.Name,
-                    ExtensionNumber = dtoDepartment.ExtensionNumber
+                    Id = viewModelDepartment.Id,
+                    Name = viewModelDepartment.Name,
+                    ExtensionNumber = viewModelDepartment.ExtensionNumber
                 };
 
                 await _departmentservice.UpdateDepartment(department);

@@ -82,7 +82,6 @@ namespace BPMSystem.Web.Controllers
                 {
                     FirstName = createDtoEmployee.FirstName,
                     LastName = createDtoEmployee.LastName,
-                    //PersonNumber = createDtoEmployee.PersonNumber,
                     DateOfBirth = createDtoEmployee.DateOfBirth,
                     EditDate = null,
                     WorkExperience = createDtoEmployee.WorkExperience,
@@ -95,7 +94,7 @@ namespace BPMSystem.Web.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                throw new Exception(ex.Message);
             }
         }
 

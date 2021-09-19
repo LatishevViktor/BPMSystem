@@ -22,5 +22,10 @@ namespace BPMSystem.BLL.DTO
         /// Внутренний номер
         /// </summary>
         public int ExtensionNumber { get; set; }
+
+        /// <summary>
+        /// Свойство неободимое для выведения данных о сотрудниках в конкретном отделе
+        /// </summary>
+        public List<DAL.Entities.Employee> Employees { get; set; }
     }
 }
