@@ -26,7 +26,7 @@ namespace BPMSystem.BLL.DTO.Employees
         public DateTime DateOfBirth { get; set; }
 
         /// <summary>
-        /// Дата изменеия данных работника
+        /// Дата изменения данных работника
         /// </summary>
         public DateTime? EditData { get; set; }
 

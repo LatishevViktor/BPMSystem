@@ -28,11 +28,7 @@ namespace BPMSystem.DAL.Repositories
         {
             var employee = await _context.Employees.FirstOrDefaultAsync(emp => emp.Id == id);
 
-            if (employee == null)
-            {
-                throw new ObjectNotFoundException();
-            }
-
+            var res = employee ?? throw new ObjectNotFoundException();
             _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
         }
@@ -52,20 +48,13 @@ namespace BPMSystem.DAL.Repositories
                                 .Include(dep => dep.Department)
                                 .FirstOrDefaultAsync(emp => emp.Id == id);
 
-            if(employee == null)
-            {
-                throw new ObjectNotFoundException();
-            }
-            return employee;
+            return employee ?? throw new ObjectNotFoundException();
         }
 
         public async Task UpdateEmployee(Employee employee)
         {
             var emp = await _context.Employees.FirstOrDefaultAsync(emp => emp.Id == employee.Id);
-            if (emp == null)
-            {
-                throw new ObjectNotFoundException();
-            }
+            var res = emp ?? throw new ObjectNotFoundException();
 
             emp.Id = employee.Id;
             emp.FirstName = employee.FirstName;

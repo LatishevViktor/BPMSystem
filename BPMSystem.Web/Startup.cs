@@ -48,9 +48,9 @@ namespace BPMSystem.Web
 
             services.AddTransient<IEmployeeRepository, EmployeeRepository>();
             services.AddTransient<IEmployeeService, EmployeeService>();
-        }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            services.AddCors();
+        }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -60,12 +60,13 @@ namespace BPMSystem.Web
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BPMSystem.Web v1"));
             }
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
 
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
