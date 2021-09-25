@@ -49,7 +49,15 @@ namespace BPMSystem.Web
             services.AddTransient<IEmployeeRepository, EmployeeRepository>();
             services.AddTransient<IEmployeeService, EmployeeService>();
 
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("BpmServicePolicy", builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+            });
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -66,7 +74,7 @@ namespace BPMSystem.Web
             app.UseRouting();
             app.UseAuthorization();
 
-            app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));
+            app.UseCors("BpmServicePolicy");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
