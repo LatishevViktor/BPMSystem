@@ -3,6 +3,16 @@
   color:mintcream
 }
 .header_content{
-  background-color: #64b5f6;
+  background-color: #588ab3;
   height: 45px;
+}
+
+mat-sidenav-container{
+  height: 100%;
+}
+mat-sidenav{
+  text-align: center;
+  padding-top: 16px;
+  width: 200px;
+  background-color: #e3f2fd;
 }

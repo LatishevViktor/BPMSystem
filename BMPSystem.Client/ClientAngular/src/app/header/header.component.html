@@ -1,6 +1,9 @@
 <mat-toolbar class="header_content">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button class="example-icon" (click)="openSideBar()" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
-  <span class="header_words">Главная страница</span>
+  <span class="header_words">Главная</span>
 </mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="isOpen">Меню</mat-sidenav>
+</mat-sidenav-container>
