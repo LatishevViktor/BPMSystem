@@ -12,7 +12,7 @@ namespace BPMSystem.BLL.DTO
     /// </summary>
     public class ViewModelDepartment
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Наименование отдела
         /// </summary>

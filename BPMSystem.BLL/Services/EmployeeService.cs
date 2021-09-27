@@ -42,7 +42,7 @@ namespace BPMSystem.BLL.Services
             catch(Exception ex) { throw ex; }
         }
 
-        public async Task DeleteEmployee(Guid id)
+        public async Task DeleteEmployee(int id)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace BPMSystem.BLL.Services
             return empList;
         }
 
-        public async Task<Employee> GetEmployee(Guid id)
+        public async Task<Employee> GetEmployee(int id)
         {
             Employee employee = new Employee();
             try

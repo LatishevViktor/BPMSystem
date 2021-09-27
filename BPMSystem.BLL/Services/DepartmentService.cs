@@ -42,7 +42,7 @@ namespace Services.BPMSystemBLL.Services
             catch (Exception ex) { throw ex; }
         }
 
-        public async Task DeleteDepartment(Guid id)
+        public async Task DeleteDepartment(int id)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace Services.BPMSystemBLL.Services
             return depList.ToList();
         }
 
-        public async Task<Department> GetDepartment(Guid id)
+        public async Task<Department> GetDepartment(int id)
         {
             var empDep = await _employeeRepository.GetAllEmployee();
 

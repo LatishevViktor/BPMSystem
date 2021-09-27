@@ -24,7 +24,7 @@ namespace BPMSystem.DAL.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteDepartment(Guid id)
+        public async Task DeleteDepartment(int id)
         {
             var dep = await _context.Departments.FirstOrDefaultAsync(dep => dep.Id == id);
 
@@ -38,7 +38,7 @@ namespace BPMSystem.DAL.Repositories
             return await _context.Departments.ToListAsync();
         }
 
-        public async Task<Department> GetDepartment(Guid id)
+        public async Task<Department> GetDepartment(int id)
         {
             var dep = await _context.Departments
                                     .Include(emp => emp.Employees)

@@ -10,9 +10,9 @@ namespace BPMSystem.BLL.Interfaces
     public interface IPositionService
     {
         Task<IEnumerable<Position>> GetAllPosition();
-        Task<Position> GetPosition(Guid id);
+        Task<Position> GetPosition(int id);
         Task CreatePosition(Position dtoPosition);
         Task UpdatePosition(Position dtoPosition);
-        Task DeletePosition(Guid id);
+        Task DeletePosition(int id);
     }
 }

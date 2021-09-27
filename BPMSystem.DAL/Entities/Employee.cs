@@ -14,7 +14,7 @@ namespace BPMSystem.DAL.Entities
     public class Employee
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Имя работника
         /// </summary>
@@ -48,7 +48,7 @@ namespace BPMSystem.DAL.Entities
         /// Идентификатор должности
         /// </summary>
         [ForeignKey(nameof(Position))]
-        public Guid PositionId { get; set; }
+        public int PositionId { get; set; }
 
         /// <summary>
         /// Должность, навигационное свойство 
@@ -59,7 +59,7 @@ namespace BPMSystem.DAL.Entities
         /// Внешний ключ на Id отдела
         /// </summary>
         [ForeignKey(nameof(Department))]
-        public Guid DepartmentId { get; set; }
+        public int DepartmentId { get; set; }
 
         /// <summary>
         /// Навигационное свойство отдела

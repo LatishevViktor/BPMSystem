@@ -18,7 +18,7 @@ namespace BPMSystem.DAL.Interfaces
         /// Получение одного сотрудника
         /// </summary>
         /// <returns></returns>
-        Task<Employee> GetEmployee(Guid id);
+        Task<Employee> GetEmployee(int id);
         /// <summary>
         /// Создаем сотрудника
         /// </summary>
@@ -36,6 +36,6 @@ namespace BPMSystem.DAL.Interfaces
         /// </summary>
         /// <param name="employee"></param>
         /// <returns></returns>
-        Task DeleteEmployee(Guid id);
+        Task DeleteEmployee(int id);
     }
 }

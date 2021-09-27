@@ -13,7 +13,7 @@ namespace BPMSystem.DAL.Entities
     public class Department
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Наименование отдела
         /// </summary>

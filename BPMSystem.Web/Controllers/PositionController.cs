@@ -40,7 +40,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<ViewModelPosition>> GetPosition(Guid id)
+        public async Task<ActionResult<ViewModelPosition>> GetPosition(int id)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeletePosition(Guid id)
+        public async Task<IActionResult> DeletePosition(int id)
         {
             try
             {

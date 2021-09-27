@@ -8,9 +8,9 @@ namespace BPMSystem.BLL.Interfaces
     public interface IEmployeeService
     {
         Task<IEnumerable<Employee>> GetAllEmployee();
-        Task<Employee> GetEmployee(Guid id);
+        Task<Employee> GetEmployee(int id);
         Task CreateEmployee(Employee dtoEmployee);
         Task UpdateEmployee(Employee dtoEmployee);
-        Task DeleteEmployee(Guid id);
+        Task DeleteEmployee(int id);
     }
 }

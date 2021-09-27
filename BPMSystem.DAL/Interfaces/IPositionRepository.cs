@@ -18,7 +18,7 @@ namespace BPMSystem.DAL.Interfaces
         /// Получение должности
         /// </summary>
         /// <returns></returns>
-        Task<Position> GetPosition(Guid id);
+        Task<Position> GetPosition(int id);
         /// <summary>
         /// Создаем должность
         /// </summary>
@@ -36,6 +36,6 @@ namespace BPMSystem.DAL.Interfaces
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        Task DeletePosition(Guid id);
+        Task DeletePosition(int id);
     }
 }

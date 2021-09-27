@@ -10,9 +10,9 @@ namespace BPMSystem.BLL.Interfaces
     public interface IDepartmentService
     {
         Task<IEnumerable<Department>> GetAllDepartment();
-        Task<Department> GetDepartment(Guid id);
+        Task<Department> GetDepartment(int id);
         Task CreateDepartment(Department dtoDepartment);
         Task UpdateDepartment(Department dtoDepartment);
-        Task DeleteDepartment(Guid id);
+        Task DeleteDepartment(int id);
     }
 }
