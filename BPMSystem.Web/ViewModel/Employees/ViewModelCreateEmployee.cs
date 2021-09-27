@@ -44,12 +44,12 @@ namespace BPMSystem.BLL.DTO.Employees
         /// Идентификатор должности
         /// </summary>
         [ForeignKey(nameof(Position))]
-        public Guid PositionId { get; set; }
+        public int PositionId { get; set; }
 
         /// <summary>
         /// Внешний ключ на Id отдела
         /// </summary>
         [ForeignKey(nameof(Department))]
-        public Guid DepartmentId { get; set; }
+        public int DepartmentId { get; set; }
     }
 }

@@ -36,7 +36,7 @@ namespace Services.BPMSystemBLL.Services
             catch (Exception ex) { throw ex; }
         }
 
-        public async Task DeletePosition(Guid id)
+        public async Task DeletePosition(int id)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace Services.BPMSystemBLL.Services
             return posList;
         }
 
-        public async Task<Position> GetPosition(Guid id)
+        public async Task<Position> GetPosition(int id)
         {
             Position position = new Position();
             try

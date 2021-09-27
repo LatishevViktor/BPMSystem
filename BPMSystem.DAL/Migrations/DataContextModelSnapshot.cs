@@ -21,9 +21,10 @@ namespace BPMSystem.DAL.Migrations
 
             modelBuilder.Entity("BPMSystem.DAL.Entities.Department", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("ExtensionNumber")
                         .HasColumnType("int");
@@ -38,15 +39,16 @@ namespace BPMSystem.DAL.Migrations
 
             modelBuilder.Entity("BPMSystem.DAL.Entities.Employee", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("DepartmentId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("EditDate")
                         .HasColumnType("datetime2");
@@ -60,8 +62,8 @@ namespace BPMSystem.DAL.Migrations
                     b.Property<string>("PersonNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("PositionId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("PositionId")
+                        .HasColumnType("int");
 
                     b.Property<double>("WorkExperience")
                         .HasColumnType("float");
@@ -77,9 +79,10 @@ namespace BPMSystem.DAL.Migrations
 
             modelBuilder.Entity("BPMSystem.DAL.Entities.Position", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");

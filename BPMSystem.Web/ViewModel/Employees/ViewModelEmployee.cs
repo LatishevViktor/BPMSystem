@@ -7,7 +7,7 @@ namespace BPMSystem.BLL.DTO.Employee
 {
     public class ViewModelEmployee
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Имя работника
         /// </summary>
@@ -42,7 +42,7 @@ namespace BPMSystem.BLL.DTO.Employee
         /// Идентификатор должности
         /// </summary>
         [ForeignKey(nameof(Position))]
-        public Guid PositionId { get; set; }
+        public int PositionId { get; set; }
 
         /// <summary>
         /// Название должности
@@ -53,7 +53,7 @@ namespace BPMSystem.BLL.DTO.Employee
         /// Внешний ключ на Id отдела
         /// </summary>
         [ForeignKey(nameof(Department))]
-        public Guid DepartmentId { get; set; }
+        public int DepartmentId { get; set; }
 
         /// <summary>
         /// Название отдела

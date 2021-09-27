@@ -63,7 +63,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<ViewModelDepartment>> GetDepartment(Guid id)
+        public async Task<ActionResult<ViewModelDepartment>> GetDepartment(int id)
         { 
             try
             {
@@ -107,7 +107,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDepartment(Guid id)
+        public async Task<IActionResult> DeleteDepartment(int id)
         {
             try
             {

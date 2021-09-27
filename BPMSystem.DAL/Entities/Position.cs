@@ -13,7 +13,7 @@ namespace BPMSystem.DAL.Entities
     public class Position
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Наименование должности
         /// </summary>

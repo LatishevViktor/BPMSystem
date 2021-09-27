@@ -18,7 +18,7 @@ namespace BPMSystem.DAL.Interfaces
         /// Получение одного отдела
         /// </summary>
         /// <returns></returns>
-        Task<Department> GetDepartment(Guid id);
+        Task<Department> GetDepartment(int id);
         /// <summary>
         /// Создаем отдел
         /// </summary>
@@ -36,6 +36,6 @@ namespace BPMSystem.DAL.Interfaces
         /// </summary>
         /// <param name="department"></param>
         /// <returns></returns>
-        Task DeleteDepartment(Guid id);
+        Task DeleteDepartment(int id);
     }
 }
