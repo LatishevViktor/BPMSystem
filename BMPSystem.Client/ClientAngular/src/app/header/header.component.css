@@ -14,5 +14,9 @@ mat-sidenav{
   text-align: center;
   padding-top: 16px;
   width: 200px;
-  background-color: #e3f2fd;
+  background: rgb(247, 249, 255);
+  color: black;
+}
+.mat-items{
+  padding-left: 16px;
 }
