@@ -5,5 +5,12 @@
   <span class="header_words">Главная</span>
 </mat-toolbar>
 <mat-sidenav-container>
-  <mat-sidenav [(opened)]="isOpen">Меню</mat-sidenav>
+  <mat-sidenav [(opened)]="isOpen">
+    <h1 style="size: 30px;">Меню</h1>
+    <mat-list class="mat-items">
+      <mat-list-item><span class="material-icons md-light" style="padding-right: 16px;">business</span>Отделы</mat-list-item>
+      <mat-list-item><span class="material-icons md-light" style="padding-right: 16px;">group</span>Сотрудники</mat-list-item>
+      <mat-list-item><span class="material-icons md-light" style="padding-right: 16px;">group_work</span>Должности</mat-list-item>
+    </mat-list>
+  </mat-sidenav>
 </mat-sidenav-container>
