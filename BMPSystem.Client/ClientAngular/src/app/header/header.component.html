@@ -1,5 +1,5 @@
 <mat-toolbar class="header_content">
-  <button mat-icon-button class="example-icon" (click)="openSideBar()" aria-label="Example icon-button with menu icon">
+  <button mat-button (click)="openSideBar()" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
   <span class="header_words">Главная</span>
@@ -8,9 +8,14 @@
   <mat-sidenav [(opened)]="isOpen">
     <h1 style="size: 30px;">Меню</h1>
     <mat-list class="mat-items">
-      <mat-list-item><span class="material-icons md-light" style="padding-right: 16px;">business</span>Отделы</mat-list-item>
+      <mat-list-item><span class="material-icons md-light" style="padding-right: 16px;">business</span>
+        <button mat-button color="primary" routerLink="department">Отделы</button>
+      </mat-list-item>
       <mat-list-item><span class="material-icons md-light" style="padding-right: 16px;">group</span>Сотрудники</mat-list-item>
       <mat-list-item><span class="material-icons md-light" style="padding-right: 16px;">group_work</span>Должности</mat-list-item>
     </mat-list>
   </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>
