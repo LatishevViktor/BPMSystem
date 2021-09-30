@@ -22,17 +22,18 @@ export class SharedService{
     return this.http.put(this.API_URL + '/department', val)
   }
 
-  getDep(id: number):Observable<any>{
-    return  this.http.get<any>(this.API_URL + '/department' + id)
+  getDep(id: number){
+    let test = this.API_URL + '/department/' + id
+    return  this.http.get(this.API_URL + '/department/' + id)
   }
 
-  deleteDep(id: number):Observable<any>{
-    return  this.http.delete(this.API_URL + '/department' + id)
+  deleteDep(id: number){
+    return  this.http.delete(this.API_URL + '/department/' + id)
   }
 
   // Сервис по отправке запросов сотрудникам
-  getEmpList():Observable<any[]> {
-    return this.http.get<any>(this.API_URL + '/employee')
+  getEmpList(){
+    return this.http.get<any[]>(this.API_URL + '/employee')
   }
 
   addEmployee(val: any){
@@ -43,17 +44,17 @@ export class SharedService{
     return this.http.put(this.API_URL + '/employee', val)
   }
 
-  getEmp(id: number):Observable<any>{
-    return  this.http.get<any>(this.API_URL + '/employee' + id)
+  getEmp(id: number){
+    return  this.http.get(this.API_URL + '/employee/' + id)
   }
 
-  deleteEmp(id: number):Observable<any>{
-    return  this.http.delete(this.API_URL + '/employee' + id)
+  deleteEmp(id: number){
+    return  this.http.delete(this.API_URL + '/employee/' + id)
   }
 
   // Сервис по отправке запросов должностям
-  getPosList():Observable<any[]> {
-    return this.http.get<any>(this.API_URL + '/position')
+  getPosList(){
+    return this.http.get<any[]>(this.API_URL + '/position')
   }
 
   addPosition(val: any){
@@ -64,11 +65,11 @@ export class SharedService{
     return this.http.put(this.API_URL + '/position', val)
   }
 
-  getPos(id: number):Observable<any>{
-    return  this.http.get<any>(this.API_URL + '/position' + id)
+  getPos(id: number){
+    return  this.http.get(this.API_URL + '/position/' + id)
   }
 
-  deletePos(id: number):Observable<any>{
-    return  this.http.delete(this.API_URL + '/position' + id)
+  deletePos(id: number){
+    return  this.http.delete(this.API_URL + '/position/' + id)
   }
 }

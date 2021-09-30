@@ -18,6 +18,7 @@ import { DepartmentComponent } from './department/department.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { PositionComponent } from './position/position.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedService } from './shared-services/shared.service';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSortModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
