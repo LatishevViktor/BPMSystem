@@ -12,13 +12,13 @@
   <mat-sidenav [(opened)]="isOpen" autoFocus="false">
     <h1 style="size: 30px;">Меню</h1>
     <mat-nav-list class="mat-items">
-      <mat-list-item routerLink="department" (click)="openSideBar()"><span class="material-icons md-light" style="padding-right: 16px;">business</span>
+      <mat-list-item routerLink="department" (click)="isOpen = !isOpen"><span class="material-icons md-light" style="padding-right: 16px;">business</span>
         Отделы
       </mat-list-item>
-      <mat-list-item routerLink="employee" (click)="openSideBar()"><span class="material-icons md-light" style="padding-right: 16px;">group</span>
+      <mat-list-item routerLink="employee" (click)="isOpen = !isOpen"><span class="material-icons md-light" style="padding-right: 16px;">group</span>
         Сотрудники
       </mat-list-item>
-      <mat-list-item routerLink="position" (click)="openSideBar()"><span class="material-icons md-light" style="padding-right: 16px;">group_work</span>
+      <mat-list-item routerLink="position" (click)="isOpen = !isOpen"><span class="material-icons md-light" style="padding-right: 16px;">group_work</span>
         Должности
       </mat-list-item>
     </mat-nav-list>
