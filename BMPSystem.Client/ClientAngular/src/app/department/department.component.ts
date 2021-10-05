@@ -18,7 +18,6 @@ export class DepartmentComponent implements OnInit {
   
    ngOnInit(): void {
      this.refreshDepList()
-     
   }
 
   getdepart(id: number){

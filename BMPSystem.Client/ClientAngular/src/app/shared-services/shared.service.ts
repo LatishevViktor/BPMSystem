@@ -23,7 +23,6 @@ export class SharedService{
   }
 
   getDep(id: number){
-    let test = this.API_URL + '/department/' + id
     return  this.http.get(this.API_URL + '/department/' + id)
   }
 
