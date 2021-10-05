@@ -1,19 +1,16 @@
-<div>
-<table>
-    <thead>
-        <tr>
-            <td>Id отдела</td>
-            <td>Нименовани</td>
-            <td>Цена</td>
-            <td></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let dep of departments">
-              <td>{{dep?.id}}</td>
-              <td>{{dep?.name}}</td>
-              <td>{{dep?.extensionNumber}}</td>
-        </tr>
-    </tbody>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Id отдела</th>
+      <th scope="col">Наименование</th>
+      <th scope="col">Внутренний номер</th>
+    </tr>
+  </thead>
+  <tbody align="center"> 
+    <tr *ngFor="let dep of departments">
+      <th scope="row">{{dep?.id}}</th>
+      <td>{{dep?.name}}</td>
+      <td>{{dep?.extensionNumber}}</td>
+    </tr>
+  </tbody>
 </table>
-</div>
