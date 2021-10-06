@@ -36,11 +36,6 @@ namespace BPMSystem.BLL.DTO.Employees
         public double WorkExperience { get; set; }
 
         /// <summary>
-        /// Табельный номер
-        /// </summary>
-        public string PersonNumber { get; set; }
-
-        /// <summary>
         /// Идентификатор должности
         /// </summary>
         [ForeignKey(nameof(Position))]

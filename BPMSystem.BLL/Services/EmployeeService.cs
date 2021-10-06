@@ -14,32 +14,37 @@ namespace BPMSystem.BLL.Services
         private readonly IEmployeeRepository _repository;
         public EmployeeService(IEmployeeRepository repository)
         {
-            _repository = repository;      
+            _repository = repository;
         }
 
         public async Task CreateEmployee(Employee employee)
         {
-            var randomNumber = new Random().Next(100, 1000);
-
-            employee.PersonNumber = employee.FirstName.First().ToString()
-                           + employee.LastName.First().ToString() + "-"
-                           + randomNumber.ToString();
+            employee.PersonNumber = GeneratePersonNumber(employee);
 
             List<Employee> employeeList = await _repository.GetAllEmployee();
 
             foreach (var emp in employeeList)
             {
-                if(emp.PersonNumber == employee.PersonNumber)
+                if (emp.PersonNumber == employee.PersonNumber)
                 {
                     throw new Exception("Такой сотрудник уже существует");
                 }
             }
             try
             {
-                
+
                 await _repository.CreateEmployee(employee);
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw ex; }
+        }
+
+        private string GeneratePersonNumber(Employee employee)
+        {
+            var randomNumber = new Random().Next(100, 1000);
+            var number = employee.PersonNumber = employee.FirstName.First().ToString()
+                           + employee.LastName.First().ToString() + "-"
+                           + randomNumber.ToString();
+            return number;
         }
 
         public async Task DeleteEmployee(int id)
