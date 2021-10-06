@@ -12,10 +12,5 @@ namespace BPMSystem.BLL.DTO
     public class ViewModelCreateDepartment
     { 
         public string Name { get; set; }
-
-        /// <summary>
-        /// Внутренний номер
-        /// </summary>
-        public int ExtensionNumber { get; set; }
     }
 }

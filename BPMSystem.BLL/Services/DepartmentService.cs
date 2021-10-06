@@ -20,8 +20,10 @@ namespace Services.BPMSystemBLL.Services
             _repository = repository;
             _employeeRepository = employeeRepository;
         }
+
         public async Task CreateDepartment(Department department)
         {
+            department.ExtensionNumber = GenerateExtensionNumber();
             List<Department> allDepartment = await _repository.GetAllDepartment();
 
             // Проверяем есть существует ли отдел с таким же именем или внутренним номером
@@ -38,9 +40,10 @@ namespace Services.BPMSystemBLL.Services
             {
                 await _repository.CreateDepartment(department);
             }
-
             catch (Exception ex) { throw ex; }
         }
+
+        private int GenerateExtensionNumber() => new Random().Next(100, 1000);
 
         public async Task DeleteDepartment(int id)
         {

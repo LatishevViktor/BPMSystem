@@ -26,8 +26,7 @@ namespace BPMSystem.Web.Controllers
             {
                 var createDepartment = new Department
                 {
-                    Name = createViewModelDepartment.Name,
-                    ExtensionNumber = createViewModelDepartment.ExtensionNumber
+                    Name = createViewModelDepartment.Name
                 };
 
                 await _departmentservice.CreateDepartment(createDepartment);
