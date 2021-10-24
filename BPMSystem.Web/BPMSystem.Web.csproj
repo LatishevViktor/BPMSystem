@@ -26,9 +26,4 @@
     <ProjectReference Include="..\BPMSystem.DAL\BPMSystem.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mapping\Employee\" />
-    <Folder Include="Mapping\Department\" />
-  </ItemGroup>
-
 </Project>
