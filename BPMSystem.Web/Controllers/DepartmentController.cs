@@ -7,6 +7,8 @@ using System;
 using System.Threading.Tasks;
 using BPMSystem.DAL.Entities;
 using System.Linq;
+using AutoMapper;
+using System.Collections.Generic;
 
 namespace BPMSystem.Web.Controllers
 {
@@ -14,9 +16,11 @@ namespace BPMSystem.Web.Controllers
     public class DepartmentController : Controller
     {
         private readonly IDepartmentService _departmentservice;
-        public DepartmentController(IDepartmentService departmentservice)
+        private readonly IMapper _mapper;
+        public DepartmentController(IDepartmentService departmentservice, IMapper mapper)
         {
             _departmentservice = departmentservice;
+            _mapper = mapper;
         }
 
         [HttpPost]
@@ -24,11 +28,8 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                var createDepartment = new Department
-                {
-                    Name = createViewModelDepartment.Name
-                };
-
+                //Маппинг
+                var createDepartment = _mapper.Map<Department>(createViewModelDepartment);
                 await _departmentservice.CreateDepartment(createDepartment);
                 return Ok();
             }
@@ -45,15 +46,9 @@ namespace BPMSystem.Web.Controllers
             {
                 var depList = await _departmentservice.GetAllDepartment();
 
-                // Маппинг данных
-                var dtoList = depList.Select(dep => new ViewModelDepartment
-                {
-                    Id = dep.Id,
-                    Name = dep.Name,
-                    ExtensionNumber = dep.ExtensionNumber
-                }).ToList();
-
-                return Ok(depList);
+                //Маппинг
+                var departments = _mapper.Map<IEnumerable<ViewModelDepartment>>(depList);
+                return Ok(departments);
             }
             catch(Exception ex)
             {
@@ -67,16 +62,10 @@ namespace BPMSystem.Web.Controllers
             try
             {
                 var department = await _departmentservice.GetDepartment(id);
-
-                var viewModelDepartment = new ViewModelDepartment
-                {
-                    Id = department.Id,
-                    Name = department.Name,
-                    ExtensionNumber = department.ExtensionNumber,
-                    Employees = department.Employees
-                };
-
-                return Ok(viewModelDepartment);
+                
+                //Маппинг
+                var departmentDto = _mapper.Map<ViewModelDepartment>(department);
+                return Ok(departmentDto);
             }
             catch(Exception ex)
             {
@@ -89,12 +78,8 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                var department = new Department
-                {
-                    Id = viewModelDepartment.Id,
-                    Name = viewModelDepartment.Name,
-                    ExtensionNumber = viewModelDepartment.ExtensionNumber
-                };
+                //Маппинг
+                var department = _mapper.Map<Department>(viewModelDepartment);
 
                 await _departmentservice.UpdateDepartment(department);
                 return Ok();

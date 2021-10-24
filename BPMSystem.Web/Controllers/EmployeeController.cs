@@ -1,4 +1,5 @@
-﻿using BPMSystem.BLL.DTO.Employee;
+﻿using AutoMapper;
+using BPMSystem.BLL.DTO.Employee;
 using BPMSystem.BLL.DTO.Employees;
 using BPMSystem.BLL.Interfaces;
 using BPMSystem.DAL.Entities;
@@ -16,9 +17,11 @@ namespace BPMSystem.Web.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService _service;
-        public EmployeeController(IEmployeeService service)
+        private readonly IMapper _mapper;
+        public EmployeeController(IEmployeeService service, IMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -28,20 +31,8 @@ namespace BPMSystem.Web.Controllers
             {
                 var empList = await _service.GetAllEmployee();
 
-                //Маппинг данных
-                var dtoList = empList.Select(emp => new ViewModelEmployee
-                {
-                    Id = emp.Id,
-                    FirstName = emp.FirstName,
-                    LastName = emp.LastName,
-                    PersonNumber = emp.PersonNumber,
-                    DateOfBirth = emp.DateOfBirth,
-                    EditDate = emp.EditDate,
-                    WorkExperience = emp.WorkExperience,
-                    DepartmentName = emp.Department.Name,
-                    PositionName = emp.Position.Name
-                });
-
+                //Маппинг
+                var dtoList = _mapper.Map<IEnumerable<ViewModelEmployee>>(empList);
                 return Ok(dtoList);
             }
             catch(Exception ex) { throw ex; }
@@ -55,18 +46,7 @@ namespace BPMSystem.Web.Controllers
                 var employee = await _service.GetEmployee(id);
 
                 //Мапипнг данных
-                var dtoEmp = new ViewModelEmployee
-                {
-                    Id = employee.Id,
-                    FirstName = employee.FirstName,
-                    LastName = employee.LastName,
-                    PersonNumber = employee.PersonNumber,
-                    DateOfBirth = employee.DateOfBirth,
-                    EditDate = employee.EditDate,
-                    WorkExperience = employee.WorkExperience,
-                    DepartmentName = employee.Department.Name,
-                    PositionName = employee.Position.Name
-                };
+                var dtoEmp = _mapper.Map<ViewModelEmployee>(employee);
 
                 return Ok(dtoEmp);
             }
@@ -78,16 +58,8 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                var employee = new Employee
-                {
-                    FirstName = createDtoEmployee.FirstName,
-                    LastName = createDtoEmployee.LastName,
-                    DateOfBirth = createDtoEmployee.DateOfBirth,
-                    EditDate = DateTime.Now,
-                    WorkExperience = createDtoEmployee.WorkExperience,
-                    DepartmentId = createDtoEmployee.DepartmentId,
-                    PositionId = createDtoEmployee.PositionId
-                };
+                //Маппинг
+                var employee = _mapper.Map<Employee>(createDtoEmployee);
 
                 await _service.CreateEmployee(employee);
                 return Ok();
@@ -114,18 +86,9 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                var employee = new Employee
-                {
-                    Id = dtoEmployee.Id,
-                    FirstName = dtoEmployee.FirstName,
-                    LastName = dtoEmployee.LastName,
-                    PersonNumber = dtoEmployee.PersonNumber,
-                    DateOfBirth = dtoEmployee.DateOfBirth,
-                    EditDate = DateTime.Now,
-                    WorkExperience = dtoEmployee.WorkExperience,
-                    DepartmentId = dtoEmployee.DepartmentId,
-                    PositionId = dtoEmployee.PositionId
-                };
+                //Маппинг
+                var employee = _mapper.Map<Employee>(dtoEmployee);
+                employee.EditDate = DateTime.Now;
 
                 await _service.UpdateEmployee(employee);
                 return Ok();

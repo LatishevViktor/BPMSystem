@@ -32,7 +32,6 @@ namespace BPMSystem.BLL.Services
             }
             try
             {
-
                 await _repository.CreateEmployee(employee);
             }
             catch (Exception ex) { throw ex; }

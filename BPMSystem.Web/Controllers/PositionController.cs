@@ -1,4 +1,5 @@
-﻿using BPMSystem.BLL.DTO.Position;
+﻿using AutoMapper;
+using BPMSystem.BLL.DTO.Position;
 using BPMSystem.BLL.Interfaces;
 using BPMSystem.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -14,9 +15,11 @@ namespace BPMSystem.Web.Controllers
     public class PositionController : Controller
     {
         private readonly IPositionService _service;
-        public PositionController(IPositionService service)
+        private readonly IMapper _mapper;
+        public PositionController(IPositionService service, IMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -27,12 +30,7 @@ namespace BPMSystem.Web.Controllers
                 var posList = await _service.GetAllPosition();
 
                 //Маппинг данных
-                var dtoPosList = posList.Select(pos => new ViewModelPosition
-                {
-                    Id = pos.Id,
-                    Name = pos.Name,
-                    Title = pos.Title
-                }).ToList();
+                var dtoPosList = _mapper.Map<IEnumerable<ViewModelPosition>>(posList);
 
                 return Ok(dtoPosList);
             }
@@ -46,12 +44,8 @@ namespace BPMSystem.Web.Controllers
             {
                 var position = await _service.GetPosition(id);
 
-                var dtoPosition = new ViewModelPosition
-                {
-                    Id = position.Id,
-                    Name = position.Name,
-                    Title = position.Title
-                };
+                //Маппинг
+                var dtoPosition = _mapper.Map<ViewModelPosition>(position);
 
                 return Ok(dtoPosition);
             }
@@ -63,11 +57,8 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                var position = new Position
-                {
-                    Name = dtoCreatePosition.Name,
-                    Title = dtoCreatePosition.Title
-                };
+                //Маппинг
+                var position = _mapper.Map<Position>(dtoCreatePosition);
 
                 await _service.CreatePosition(position);
                 return Ok();
@@ -80,12 +71,8 @@ namespace BPMSystem.Web.Controllers
         {
             try
             {
-                var position = new Position
-                {
-                    Id = dtoPosition.Id,
-                    Name = dtoPosition.Name,
-                    Title = dtoPosition.Title
-                };
+                //Маппинг
+                var position = _mapper.Map<Position>(dtoPosition);
 
                 await _service.UpdatePosition(position);
                 return Ok();
