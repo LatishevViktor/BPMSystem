@@ -12,6 +12,7 @@ using BPMSystem.DAL.Repositories;
 using BPMSystem.BLL.Interfaces;
 using Services.BPMSystemBLL.Services;
 using BPMSystem.BLL.Services;
+using System;
 
 namespace BPMSystem.Web
 {
@@ -49,6 +50,7 @@ namespace BPMSystem.Web
             services.AddTransient<IEmployeeRepository, EmployeeRepository>();
             services.AddTransient<IEmployeeService, EmployeeService>();
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddCors(options =>
             {
                 options.AddPolicy("BpmServicePolicy", builder =>
