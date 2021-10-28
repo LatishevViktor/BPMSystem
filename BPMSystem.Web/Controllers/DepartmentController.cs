@@ -47,7 +47,7 @@ namespace BPMSystem.Web.Controllers
                 var depList = await _departmentservice.GetAllDepartment();
 
                 //Маппинг
-                var departments = _mapper.Map<IEnumerable<ViewModelDepartment>>(depList);
+                var departments = _mapper.Map<List<ViewModelDepartment>>(depList);
                 return Ok(departments);
             }
             catch(Exception ex)
@@ -62,7 +62,6 @@ namespace BPMSystem.Web.Controllers
             try
             {
                 var department = await _departmentservice.GetDepartment(id);
-                
                 //Маппинг
                 var departmentDto = _mapper.Map<ViewModelDepartment>(department);
                 return Ok(departmentDto);

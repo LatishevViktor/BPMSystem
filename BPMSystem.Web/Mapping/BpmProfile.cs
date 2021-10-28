@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using AutoMapper;
 using BPMSystem.BLL.DTO;
 using BPMSystem.BLL.DTO.Employee;
@@ -13,7 +14,8 @@ namespace BPMSystem.Web.Mapping
         public BpmProfile()
         {
             //Department Mapping
-            CreateMap<Department, ViewModelDepartment>();
+            CreateMap<Department, ViewModelDepartment>()
+                .ForMember(dest => dest.Employees, opt => opt.MapFrom(src => src.Employees));
             CreateMap<ViewModelDepartment, Department>();
             CreateMap<ViewModelCreateDepartment, Department>();
 
@@ -23,7 +25,9 @@ namespace BPMSystem.Web.Mapping
             CreateMap<ViewModelCreatePosition, Position>();
 
             //Employee Mapping
-            CreateMap<Employee, ViewModelEmployee>();
+            CreateMap<Employee, ViewModelEmployee>()
+                .ForMember(dest => dest.PositionName, opt => opt.MapFrom(src => src.Position.Name))
+                .ForMember(dest => dest.DepartmentName, opt => opt.MapFrom(src => src.Department.Name));
             CreateMap<ViewModelEmployee, Employee>();
             CreateMap<ViewModelCreateEmployee, Employee>()
                 .ForMember(dest => dest.EditDate, opt => opt.MapFrom(src => src.EditData == DateTime.Now));

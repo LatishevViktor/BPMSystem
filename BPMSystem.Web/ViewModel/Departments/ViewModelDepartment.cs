@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BPMSystem.BLL.DTO.Employee;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,6 +27,6 @@ namespace BPMSystem.BLL.DTO
         /// <summary>
         /// Свойство неободимое для выведения данных о сотрудниках в конкретном отделе
         /// </summary>
-        public List<DAL.Entities.Employee> Employees { get; set; }
+        public List<ViewModelEmployee> Employees { get; set; }
     }
 }
