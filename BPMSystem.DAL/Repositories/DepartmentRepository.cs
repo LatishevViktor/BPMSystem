@@ -35,7 +35,9 @@ namespace BPMSystem.DAL.Repositories
 
         public async Task<List<Department>> GetAllDepartment()
         {
-            return await _context.Departments.ToListAsync();
+            return await _context.Departments
+                                 .Include(emp => emp.Employees)
+                                 .ToListAsync();
         }
 
         public async Task<Department> GetDepartment(int id)

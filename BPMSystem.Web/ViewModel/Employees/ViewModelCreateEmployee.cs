@@ -38,13 +38,11 @@ namespace BPMSystem.BLL.DTO.Employees
         /// <summary>
         /// Идентификатор должности
         /// </summary>
-        [ForeignKey(nameof(Position))]
         public int PositionId { get; set; }
 
         /// <summary>
         /// Внешний ключ на Id отдела
         /// </summary>
-        [ForeignKey(nameof(Department))]
         public int DepartmentId { get; set; }
     }
 }

@@ -47,7 +47,7 @@ namespace Services.BPMSystemBLL.Services
 
         public async Task<IEnumerable<Position>> GetAllPosition()
         {
-            IEnumerable<Position> posList = new List<Position>();
+            IEnumerable<Position> posList;
             try
             {
                 posList = await _repository.GetAllPosition();

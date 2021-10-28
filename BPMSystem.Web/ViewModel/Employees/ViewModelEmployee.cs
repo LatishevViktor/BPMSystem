@@ -1,6 +1,5 @@
 ﻿using BPMSystem.DAL.Entities;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BPMSystem.BLL.DTO.Employee
@@ -41,7 +40,6 @@ namespace BPMSystem.BLL.DTO.Employee
         /// <summary>
         /// Идентификатор должности
         /// </summary>
-        [ForeignKey(nameof(Position))]
         public int PositionId { get; set; }
 
         /// <summary>
@@ -52,7 +50,6 @@ namespace BPMSystem.BLL.DTO.Employee
         /// <summary>
         /// Внешний ключ на Id отдела
         /// </summary>
-        [ForeignKey(nameof(Department))]
         public int DepartmentId { get; set; }
 
         /// <summary>
