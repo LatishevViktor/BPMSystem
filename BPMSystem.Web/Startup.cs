@@ -3,16 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using BPMSystem.DAL.EF;
-using BPMSystem.DAL.Interfaces;
-using BPMSystem.DAL.Repositories;
-using BPMSystem.BLL.Interfaces;
-using Services.BPMSystemBLL.Services;
-using BPMSystem.BLL.Services;
 using System;
+using BPMSystem.Web.Extensions_services;
 
 namespace BPMSystem.Web
 {
@@ -41,25 +36,11 @@ namespace BPMSystem.Web
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BPMSystem.Web", Version = "v1" });
             });
 
-            services.AddTransient<IDepartmentRepository, DepartmentRepository>();
-            services.AddTransient<IDepartmentService, DepartmentService>();
-
-            services.AddTransient<IPositionRepository, PositionRepository>();
-            services.AddTransient<IPositionService, PositionService>();
-
-            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
-            services.AddTransient<IEmployeeService, EmployeeService>();
+            // Метод в котором регистрируются все кастомные сервисы бизнес логики и репозиторий
+            services.AddRegistrationServices();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddCors(options =>
-            {
-                options.AddPolicy("BpmServicePolicy", builder =>
-                {
-                    builder.WithOrigins("http://localhost:4200")
-                           .AllowAnyHeader()
-                           .AllowAnyMethod();
-                });
-            });
+            services.AddCorsCustom();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

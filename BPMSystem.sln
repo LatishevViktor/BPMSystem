@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31424.327
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BPMSystem.DAL", "BPMSystem.DAL", "{82FB0C76-669E-4AC2-A93D-B7A0BDEDBD9B}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{EBEE67C5-7291-4838-B429-B9C9F7A4B422}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BPMSystem.Web", "BPMSystem.Web\BPMSystem.Web.csproj", "{FB0F9C2E-5D71-45B4-856A-0765C54632FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{0AC5DC58-4219-4122-A73F-F79FD56F8AFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAPI", "IdentityAPI\IdentityAPI.csproj", "{97180CD1-D279-4751-98AC-8019C1C08107}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,10 @@ Global
 		{FB0F9C2E-5D71-45B4-856A-0765C54632FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB0F9C2E-5D71-45B4-856A-0765C54632FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB0F9C2E-5D71-45B4-856A-0765C54632FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97180CD1-D279-4751-98AC-8019C1C08107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97180CD1-D279-4751-98AC-8019C1C08107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97180CD1-D279-4751-98AC-8019C1C08107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97180CD1-D279-4751-98AC-8019C1C08107}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{A2B4642C-472A-449D-9FC8-BC1147E72C4B} = {82FB0C76-669E-4AC2-A93D-B7A0BDEDBD9B}
 		{5DAA792B-0A3D-4ABF-ACD1-721D9C9E275F} = {C6370636-AD87-4E9B-9E42-15B7A06129AC}
 		{FB0F9C2E-5D71-45B4-856A-0765C54632FC} = {EBEE67C5-7291-4838-B429-B9C9F7A4B422}
+		{97180CD1-D279-4751-98AC-8019C1C08107} = {0AC5DC58-4219-4122-A73F-F79FD56F8AFB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {86045F3B-7888-4EBA-B3E6-9B5C31FCDB3A}
