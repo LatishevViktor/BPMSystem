@@ -1,10 +1,6 @@
 ﻿using BPMSystem.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BPMSystem.DAL.EF
 {
