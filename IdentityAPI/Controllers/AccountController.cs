@@ -34,7 +34,7 @@ namespace IdentityAPI.Controllers
             if(user != null)
             {
                 var token = JwtTokenHelper.GenerateJwt(user, _authOptions);
-                return Ok(new { auth_token = token });
+                return Json(new { auth_token = token });
             }
 
             return Unauthorized();

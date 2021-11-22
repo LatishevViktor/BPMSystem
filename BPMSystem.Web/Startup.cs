@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using BPMSystem.DAL.EF;
 using System;
 using BPMSystem.Web.Extensions_services;
+using Identity.Common;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace BPMSystem.Web
 {
@@ -27,6 +29,26 @@ namespace BPMSystem.Web
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(connectionString));
 
+            var authOptions = Configuration.GetSection("Auth").Get<AuthOptions>();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidIssuer = authOptions.Issuer,
+
+                        ValidateAudience = true,
+                        ValidAudience = authOptions.Audience,
+
+                        ValidateLifetime = true,
+
+                        IssuerSigningKey = authOptions.GetSymmetricSecurityKey(),
+                        ValidateIssuerSigningKey = true
+                    };
+                });
 
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
@@ -55,6 +77,8 @@ namespace BPMSystem.Web
             app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseRouting();
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseCors("BpmServicePolicy");

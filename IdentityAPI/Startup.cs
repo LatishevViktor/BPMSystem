@@ -35,9 +35,10 @@ namespace IdentityAPI
 
             // Делаем кастомную регистрацию нужных сервисов для того, чтобы разгрузить данный класс
             services.AddRegistrationServices();
+            services.AddSwaggerCustom();
+            services.AddCorsCustom();
 
             services.AddControllers();
-            services.AddSwaggerCustom();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
