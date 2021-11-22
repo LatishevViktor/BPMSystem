@@ -20,5 +20,18 @@ namespace IdentityAPI.Extensions
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "IdentityAPI", Version = "v1" });
             });
         }
+
+        public static void AddCorsCustom(this IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("BpmServicePolicy", builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+            });
+        }
     }
 }

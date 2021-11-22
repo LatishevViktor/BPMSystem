@@ -1,14 +1,14 @@
 ﻿using BPMSystem.BLL.DTO;
 using BPMSystem.BLL.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 using BPMSystem.DAL.Entities;
 using System.Linq;
 using AutoMapper;
 using System.Collections.Generic;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BPMSystem.Web.Controllers
 {
@@ -17,6 +17,7 @@ namespace BPMSystem.Web.Controllers
     {
         private readonly IDepartmentService _departmentservice;
         private readonly IMapper _mapper;
+        
         public DepartmentController(IDepartmentService departmentservice, IMapper mapper)
         {
             _departmentservice = departmentservice;
@@ -40,6 +41,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllDepartments()
         {
             try
@@ -57,6 +59,7 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ViewModelDepartment>> GetDepartment(int id)
         { 
             try
