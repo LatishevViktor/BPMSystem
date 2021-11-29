@@ -14,6 +14,8 @@ namespace IdentityAPI.Entities
         public int Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+
+        [ForeignKey(nameof(Roles))]
         public int RoleId { get; set; }
         [NotMapped]
         public Roles[] Role { get; set; }

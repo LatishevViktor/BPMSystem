@@ -38,7 +38,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 await _repository.CreateDepartment(department);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         private int GenerateExtensionNumber() => new Random().Next(100, 1000);
@@ -49,7 +49,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 await _repository.DeleteDepartment(id);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         public async Task<IEnumerable<Department>> GetAllDepartment()
@@ -59,7 +59,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 depList = await _repository.GetAllDepartment();
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
 
             return depList.ToList();
         }
@@ -71,7 +71,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 department = await _repository.GetDepartment(id);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
 
             return department;
         }
@@ -82,7 +82,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 await _repository.UpdateDepartment(department);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
     }
 }

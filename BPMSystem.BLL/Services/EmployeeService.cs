@@ -34,7 +34,7 @@ namespace BPMSystem.BLL.Services
             {
                 await _repository.CreateEmployee(employee);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         private string GeneratePersonNumber(Employee employee)
@@ -52,7 +52,7 @@ namespace BPMSystem.BLL.Services
             {
                 await _repository.DeleteEmployee(id);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         public async Task<IEnumerable<Employee>> GetAllEmployee()
@@ -62,7 +62,7 @@ namespace BPMSystem.BLL.Services
             {
                 empList = await _repository.GetAllEmployee();
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
 
             return empList;
         }
@@ -74,9 +74,9 @@ namespace BPMSystem.BLL.Services
             {
                 employee = await _repository.GetEmployee(id);
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
 
-            
+
 
             return employee;
         }
@@ -87,7 +87,7 @@ namespace BPMSystem.BLL.Services
             {
                 await _repository.UpdateEmployee(employee);
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
     }
 }

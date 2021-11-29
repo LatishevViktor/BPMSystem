@@ -33,7 +33,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 await _repository.CreatePosition(position);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         public async Task DeletePosition(int id)
@@ -42,7 +42,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 await _repository.DeletePosition(id);
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         public async Task<IEnumerable<Position>> GetAllPosition()
@@ -52,7 +52,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 posList = await _repository.GetAllPosition();
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
 
             return posList;
         }
@@ -64,7 +64,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 position = await _repository.GetPosition(id);
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
 
             return position;
         }
@@ -75,7 +75,7 @@ namespace Services.BPMSystemBLL.Services
             {
                 await _repository.UpdatePosition(position);
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
     }
 }
