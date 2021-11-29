@@ -37,6 +37,7 @@ namespace BPMSystem.DAL.Repositories
         {
             return await _context.Departments
                                  .Include(emp => emp.Employees)
+                                    .ThenInclude(emp => emp.Position)
                                  .ToListAsync();
         }
 
@@ -44,6 +45,7 @@ namespace BPMSystem.DAL.Repositories
         {
             var dep = await _context.Departments
                                     .Include(emp => emp.Employees)
+                                        .ThenInclude(emp => emp.Position)
                                     .FirstOrDefaultAsync(dep => dep.Id == id);
                       
             return dep ?? throw new ObjectNotFoundException();
