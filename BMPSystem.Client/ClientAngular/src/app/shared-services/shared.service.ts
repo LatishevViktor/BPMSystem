@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 })
 
 export class SharedService{
-  readonly API_URL = 'https://localhost:44338/api'
+  readonly API_URL = 'https://localhost:5001/api'
   constructor(private http: HttpClient) {}
   // Сервис по отправке запросов к отделам
   getDepList():Observable<any[]> {
