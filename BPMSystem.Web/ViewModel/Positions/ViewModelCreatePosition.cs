@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BPMSystem.BLL.DTO.Position
+namespace BPMSystem.Web.ViewModel
 {
     /// <summary>
     /// DTO модель для создания должностей

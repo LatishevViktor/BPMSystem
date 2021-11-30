@@ -1,5 +1,4 @@
-﻿using BPMSystem.BLL.DTO;
-using BPMSystem.BLL.Interfaces;
+﻿using BPMSystem.BLL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -7,8 +6,7 @@ using BPMSystem.DAL.Entities;
 using System.Linq;
 using AutoMapper;
 using System.Collections.Generic;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
+using BPMSystem.Web.ViewModel;
 
 namespace BPMSystem.Web.Controllers
 {
@@ -41,7 +39,6 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllDepartments()
         {
             try
@@ -59,7 +56,6 @@ namespace BPMSystem.Web.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ViewModelDepartment>> GetDepartment(int id)
         { 
             try

@@ -31,7 +31,7 @@ namespace BPMSystem.DAL.Entities
         public DateTime DateOfBirth { get; set; }
 
         /// <summary>
-        /// Дата изменеия данных работника
+        /// Дата изменения данных работника
         /// </summary>
         public DateTime? EditDate { get; set; }
         /// <summary>

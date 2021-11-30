@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using BPMSystem.BLL.DTO.Position;
 using BPMSystem.BLL.Interfaces;
 using BPMSystem.DAL.Entities;
+using BPMSystem.Web.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ namespace BPMSystem.Web.Controllers
 
                 return Ok(dtoPosList);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         [HttpGet("{id}")]
@@ -49,7 +49,7 @@ namespace BPMSystem.Web.Controllers
 
                 return Ok(dtoPosition);
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         [HttpPost]
@@ -63,7 +63,7 @@ namespace BPMSystem.Web.Controllers
                 await _service.CreatePosition(position);
                 return Ok();
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         [HttpPut]
@@ -77,7 +77,7 @@ namespace BPMSystem.Web.Controllers
                 await _service.UpdatePosition(position);
                 return Ok();
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         [HttpDelete]
@@ -88,7 +88,7 @@ namespace BPMSystem.Web.Controllers
                 await _service.DeletePosition(id);
                 return Ok();
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
     }
 }

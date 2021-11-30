@@ -1,12 +1,6 @@
-﻿using BPMSystem.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace BPMSystem.BLL.DTO.Employees
+namespace BPMSystem.Web.ViewModel
 {
     /// <summary>
     /// DTO модель для создания сотрудника

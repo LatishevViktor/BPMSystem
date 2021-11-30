@@ -1,12 +1,8 @@
-﻿using BPMSystem.BLL.DTO.Employee;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BPMSystem.BLL.DTO
+
+namespace BPMSystem.Web.ViewModel
 {
     /// <summary>
     /// DTO модель класса Department

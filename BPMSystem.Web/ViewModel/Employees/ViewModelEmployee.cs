@@ -1,8 +1,6 @@
-﻿using BPMSystem.DAL.Entities;
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
 
-namespace BPMSystem.BLL.DTO.Employee
+namespace BPMSystem.Web.ViewModel
 {
     public class ViewModelEmployee
     {

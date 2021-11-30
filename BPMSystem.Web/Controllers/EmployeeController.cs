@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
-using BPMSystem.BLL.DTO.Employee;
-using BPMSystem.BLL.DTO.Employees;
 using BPMSystem.BLL.Interfaces;
 using BPMSystem.DAL.Entities;
-using Microsoft.AspNetCore.Http;
+using BPMSystem.Web.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -35,7 +33,7 @@ namespace BPMSystem.Web.Controllers
                 var dtoList = _mapper.Map<IEnumerable<ViewModelEmployee>>(empList);
                 return Ok(dtoList);
             }
-            catch(Exception ex) { throw ex; }
+            catch(Exception ex) { throw new Exception(ex.Message); }
         }
 
         [HttpGet("{id}")]
@@ -50,7 +48,7 @@ namespace BPMSystem.Web.Controllers
 
                 return Ok(dtoEmp);
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         [HttpPost]
@@ -78,7 +76,7 @@ namespace BPMSystem.Web.Controllers
                 await _service.DeleteEmployee(id);
                 return Ok();
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         [HttpPut]
@@ -93,7 +91,7 @@ namespace BPMSystem.Web.Controllers
                 await _service.UpdateEmployee(employee);
                 return Ok();
             }
-            catch(Exception ex) { throw ex; }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
     }
