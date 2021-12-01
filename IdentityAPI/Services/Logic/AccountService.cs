@@ -21,11 +21,6 @@ namespace IdentityAPI.Services.Logic
             await _accountRepository.CreateAccount(account);
         }
 
-        //public Task<Account> GetAccountById(int id)
-        //{
-        //    return _accountRepository.GetAcountById(id);
-        //}
-
         public async Task<IEnumerable<Account>> GetAllAccounts()
         {
             return await _accountRepository.GetAllAccounts();

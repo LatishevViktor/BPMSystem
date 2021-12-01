@@ -26,9 +26,9 @@ namespace BPMSystem.DAL.Repositories
 
         public async Task DeleteEmployee(int id)
         {
-            var employee = await _context.Employees.FirstOrDefaultAsync(emp => emp.Id == id);
+            var employee = await _context.Employees.FirstOrDefaultAsync(emp => emp.Id == id)
+                           ?? throw new ObjectNotFoundException();
 
-            var res = employee ?? throw new ObjectNotFoundException();
             _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
         }
@@ -53,8 +53,8 @@ namespace BPMSystem.DAL.Repositories
 
         public async Task UpdateEmployee(Employee employee)
         {
-            var emp = await _context.Employees.FirstOrDefaultAsync(emp => emp.Id == employee.Id);
-            var res = emp ?? throw new ObjectNotFoundException();
+            var emp = await _context.Employees.FirstOrDefaultAsync(emp => emp.Id == employee.Id)
+                      ?? throw new ObjectNotFoundException();
 
             emp.Id = employee.Id;
             emp.FirstName = employee.FirstName;
