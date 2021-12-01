@@ -29,7 +29,7 @@ namespace BPMSystem.DAL.Repositories
             var dep = await _context.Departments.FirstOrDefaultAsync(dep => dep.Id == id);
 
             var res = dep ?? throw new ObjectNotFoundException();
-            _context.Departments.Remove(dep);
+            _context.Departments.Remove(res);
             await _context.SaveChangesAsync();
         }
 
@@ -53,9 +53,9 @@ namespace BPMSystem.DAL.Repositories
 
         public async Task UpdateDepartment(Department department)
         {
-            var dep = await _context.Departments.FirstOrDefaultAsync(dep => dep.Id == department.Id);
+            var dep = await _context.Departments.FirstOrDefaultAsync(dep => dep.Id == department.Id) 
+                      ?? throw new ObjectNotFoundException("Невозможно обновить данные не существующего объекта");
 
-            var res = dep ?? throw new ObjectNotFoundException("Невозможно обновить данные не существующего объекта");
             dep.Id = department.Id;
             dep.Name = department.Name;
             dep.ExtensionNumber = department.ExtensionNumber;

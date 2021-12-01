@@ -22,11 +22,6 @@ namespace IdentityAPI.Services
             await _authContext.SaveChangesAsync();
         }
 
-        //public async Task<Account> GetAcountById(int id)
-        //{
-        //    return await _authContext.Accounts.FirstOrDefaultAsync(x => x.Id == id);
-        //}
-
         public async Task<Account> GetUserByLogin(string email, string password)
         {
             var user = await  _authContext.Accounts.SingleOrDefaultAsync(u => u.Email == email && u.Password == password);

@@ -7,7 +7,6 @@ namespace IdentityAPI.Services
 {
     public interface IAccountRepository
     {
-        //Task<Account> GetAcountById(int id);
         Task<IEnumerable<Account>> GetAllAccounts();
         Task CreateAccount(Account account);
 

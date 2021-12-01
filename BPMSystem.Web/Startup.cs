@@ -10,6 +10,7 @@ using System;
 using BPMSystem.Web.Extensions_services;
 using Identity.Common;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Serilog;
 
 namespace BPMSystem.Web
 {
@@ -76,6 +77,7 @@ namespace BPMSystem.Web
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseHttpsRedirection();
+            app.UseSerilogRequestLogging();
             app.UseRouting();
 
             app.UseAuthentication();

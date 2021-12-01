@@ -29,7 +29,7 @@ namespace BPMSystem.DAL.Repositories
             var position = await _context.Positions.FirstOrDefaultAsync(pos => pos.Id == id);
 
             var res = position ?? throw new ObjectNotFoundException();
-            _context.Positions.Remove(position);
+            _context.Positions.Remove(res);
             await _context.SaveChangesAsync();
         }
 
@@ -46,8 +46,8 @@ namespace BPMSystem.DAL.Repositories
 
         public async Task UpdatePosition(Position position)
         {
-            var pos = await _context.Positions.FirstOrDefaultAsync(pos => pos.Id == position.Id);
-            var res = pos ?? throw new ObjectNotFoundException();
+            var pos = await _context.Positions.FirstOrDefaultAsync(pos => pos.Id == position.Id)
+                      ?? throw new ObjectNotFoundException();
             
             pos.Id = position.Id;
             pos.Name = position.Name;

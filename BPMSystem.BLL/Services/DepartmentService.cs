@@ -13,9 +13,11 @@ namespace Services.BPMSystemBLL.Services
     public class DepartmentService : IDepartmentService
     {
         private readonly IDepartmentRepository _repository;
+        private readonly ILogger<DepartmentService> _logger;
 
-        public DepartmentService(IDepartmentRepository repository)
+        public DepartmentService(IDepartmentRepository repository, ILogger<DepartmentService> logger)
         {
+            _logger = logger;
             _repository = repository;
         }
 
@@ -30,15 +32,22 @@ namespace Services.BPMSystemBLL.Services
                 if(allDep.Name == department.Name
                     || allDep.ExtensionNumber == department.ExtensionNumber)
                 {
-                    throw new Exception("Отдел с таким названием уже существует или регистрационным номером уже существует");
+                    string messageError = "Отдел с таким названием уже существует или регистрационным номером уже существует";
+                    _logger.LogWarning(messageError);
+                    throw new Exception(messageError);
                 }
             }
 
             try
             {
+                _logger.LogInformation("Идет запись нового отдела в БД...");
                 await _repository.CreateDepartment(department);
             }
-            catch (Exception ex) { throw new Exception(ex.Message); }
+            catch (Exception ex) 
+            {
+                _logger.LogError("Произошла ошибка при создании нового отдела!");
+                throw new Exception(ex.Message); 
+            }
         }
 
         private int GenerateExtensionNumber() => new Random().Next(100, 1000);
@@ -57,11 +66,11 @@ namespace Services.BPMSystemBLL.Services
             IEnumerable<Department> depList;
             try
             {
+                throw new Exception("Test");
                 depList = await _repository.GetAllDepartment();
+                return depList.ToList();
             }
             catch (Exception ex) { throw new Exception(ex.Message); }
-
-            return depList.ToList();
         }
 
         public async Task<Department> GetDepartment(int id)
