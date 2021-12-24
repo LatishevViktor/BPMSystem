@@ -12,9 +12,6 @@ export class DepartmentComponent implements OnInit {
   constructor(private readonly service: SharedService) { }
   department: ViewModelDepartment = new ViewModelDepartment()
   departments: any[] = []
-
-  displayedColumns: string[] = ['Id', 'name', 'Extension Number'];
-  dataSource = this.departments;
   
    ngOnInit(): void {
      this.refreshDepList()

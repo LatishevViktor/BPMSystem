@@ -1,1 +1,28 @@
-<p>employee works!</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Id сотрудника</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Фамилия</th>
+      <th scope="col">Дата рождения</th>
+      <th scope="col">Дата редактирования</th>
+      <th scope="col">Опыт работы</th>
+      <th scope="col">Табельный номер</th>
+      <th scope="col">Должность</th>
+      <th scope="col">Отдел</th>
+    </tr>
+  </thead>
+  <tbody align="center"> 
+    <tr *ngFor="let emp of employees">
+      <th scope="row">{{emp?.id}}</th>
+      <td>{{emp?.firstName}}</td>
+      <td>{{emp?.lastName}}</td>
+      <td>{{emp?.dateOfBirth}}</td>
+      <td>{{emp?.ediData}}</td>
+      <td>{{emp?.workExperience}}</td>
+      <td>{{emp?.personNumber}}</td>
+      <td>{{emp?.positionName}}</td>
+      <td>{{emp?.departmentName}}</td>
+    </tr>
+  </tbody>
+</table>

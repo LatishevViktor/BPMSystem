@@ -18,12 +18,12 @@ namespace BPMSystem.Web.ViewModel
         /// <summary>
         /// Дата рождения работника
         /// </summary>
-        public DateTime DateOfBirth { get; set; }
+        public string DateOfBirth { get; set; }
 
         /// <summary>
         /// Дата изменеия данных работника
         /// </summary>
-        public DateTime? EditDate { get; set; }
+        public string EditDate { get; set; }
 
         /// <summary>
         /// Опыт работы

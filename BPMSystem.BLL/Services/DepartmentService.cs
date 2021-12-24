@@ -66,7 +66,6 @@ namespace Services.BPMSystemBLL.Services
             IEnumerable<Department> depList;
             try
             {
-                throw new Exception("Test");
                 depList = await _repository.GetAllDepartment();
                 return depList.ToList();
             }
