@@ -27,6 +27,6 @@ namespace BPMSystem.DAL.Entities
         /// <summary>
         /// Свойство неободимое для выведения данных о сотрудниках в конкретном отделе
         /// </summary>
-        public List<Employee> Employees { get; set; }
+        public virtual List<Employee> Employees { get; set; }
     }
 }

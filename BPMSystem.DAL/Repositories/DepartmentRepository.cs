@@ -35,18 +35,12 @@ namespace BPMSystem.DAL.Repositories
 
         public async Task<List<Department>> GetAllDepartment()
         {
-            return await _context.Departments
-                                 .Include(emp => emp.Employees)
-                                    .ThenInclude(emp => emp.Position)
-                                 .ToListAsync();
+            return await _context.Departments.ToListAsync();
         }
 
         public async Task<Department> GetDepartment(int id)
         {
-            var dep = await _context.Departments
-                                    .Include(emp => emp.Employees)
-                                        .ThenInclude(emp => emp.Position)
-                                    .FirstOrDefaultAsync(dep => dep.Id == id);
+            var dep = await _context.Departments.FirstOrDefaultAsync(dep => dep.Id == id);
                       
             return dep ?? throw new ObjectNotFoundException();
         }
