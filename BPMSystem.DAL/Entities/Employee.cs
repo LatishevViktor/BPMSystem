@@ -53,7 +53,7 @@ namespace BPMSystem.DAL.Entities
         /// <summary>
         /// Должность, навигационное свойство 
         /// </summary>
-        public Position Position { get; set; }
+        public virtual Position Position { get; set; }
 
         /// <summary>
         /// Внешний ключ на Id отдела
@@ -64,6 +64,6 @@ namespace BPMSystem.DAL.Entities
         /// <summary>
         /// Навигационное свойство отдела
         /// </summary>
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

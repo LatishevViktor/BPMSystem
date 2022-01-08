@@ -15,7 +15,7 @@ namespace BPMSystem.DAL.EF
         }
         public DataContext(DbContextOptions<DataContext> options) : base(options) 
         {
-            Database.EnsureCreated();
+            
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -23,7 +23,9 @@ namespace BPMSystem.DAL.EF
             if (!optionsBuilder.IsConfigured)
             {
                 string connectionString = "Server=DESKTOP-G0D1JK5\\LATYSHEVSERVER;Database=BPMSystem;Trusted_Connection=True;";
-                optionsBuilder.UseSqlServer(connectionString);
+                optionsBuilder
+                    .UseLazyLoadingProxies()
+                    .UseSqlServer(connectionString);
             }
             base.OnConfiguring(optionsBuilder);
         }

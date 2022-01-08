@@ -28,7 +28,9 @@ namespace BPMSystem.Web
         {
             var connectionString = Configuration.GetConnectionString("DbConnect");
             services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(connectionString));
+                options
+                    .UseLazyLoadingProxies()
+                    .UseSqlServer(connectionString));
 
             var authOptions = Configuration.GetSection("Auth").Get<AuthOptions>();
 
