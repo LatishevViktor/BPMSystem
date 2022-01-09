@@ -3,6 +3,7 @@ export class ViewModelEmployee{
               public firstName?: string,
               public lastName?: string,
               public dateOfBirth?: string,
+              public age?: number,
               public ediData?: string,
               public workExperience?: number,
               public personNumber?: string,

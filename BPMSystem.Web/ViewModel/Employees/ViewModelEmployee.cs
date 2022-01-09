@@ -21,6 +21,11 @@ namespace BPMSystem.Web.ViewModel
         public string DateOfBirth { get; set; }
 
         /// <summary>
+        /// Возраст
+        /// </summary>
+        public int Age { get; set; }
+
+        /// <summary>
         /// Дата изменеия данных работника
         /// </summary>
         public string EditDate { get; set; }

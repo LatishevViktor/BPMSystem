@@ -4,6 +4,8 @@ using AutoMapper;
 using BPMSystem.DAL.Entities;
 using BPMSystem.Web.ViewModel;
 
+using NodaTime;
+
 namespace BPMSystem.Web.Mapping
 {
     public class BpmProfile : Profile 
@@ -26,6 +28,7 @@ namespace BPMSystem.Web.Mapping
                 .ForMember(dest => dest.PositionName, opt => opt.MapFrom(src => src.Position.Name))
                 .ForMember(dest => dest.DepartmentName, opt => opt.MapFrom(src => src.Department.Name))
                 .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth.ToString("dd.MM.yyyy")))
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => Period.Between(LocalDateTime.FromDateTime(src.DateOfBirth), LocalDateTime.FromDateTime(DateTime.Now)).Years))
                 .ForMember(dest => dest.EditDate, opt => opt.MapFrom(src => src.EditDate.HasValue ? src.EditDate.Value.ToString("dd.MM.yyyy")
                                                                                                   : string.Empty));
             CreateMap<ViewModelEmployee, Employee>();
