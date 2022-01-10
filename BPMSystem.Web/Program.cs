@@ -1,49 +1,82 @@
-using Microsoft.AspNetCore.Hosting;
+using BPMSystem.DAL.EF;
+using BPMSystem.Web.Extensions_services;
+using Identity.Common;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+var builder = WebApplication.CreateBuilder(args);
 
-namespace BPMSystem.Web
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+var authOptions = builder.Configuration.GetSection("Auth").Get<AuthOptions>();
+
+//Регистрируем логгирование
+builder.Host.UseSerilog((ctx, lc) => lc
+    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
             .Enrich.FromLogContext()
-            .WriteTo.Console()
-            .CreateLogger();
+            .WriteTo.Console());
 
-            try
-            {
-                Log.Information("Старт серверной части приложения...");
-                CreateHostBuilder(args).Build().Run();
-                
-            }
-            catch(Exception ex)
-            {
-                Log.Fatal("Фатальная ошибка!", ex.Message);
-            }
-            finally
-            {
-                Log.CloseAndFlush();
-            }
-        }
+//Выполняем настройки аунтификации
+builder.Services.AddPortalAuth(authOptions);
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .UseSerilog()
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
+//Регистрируем акссессор для работы с контекстом вне контроллеров
+builder.Services.AddHttpContextAccessor();
+
+//Регистрируем наши кастомные сервисы
+builder.Services.AddCustomServices();
+
+//Регистрируем базу данных
+builder.Services.AddDbContext<DataContext>(options =>
+    options
+        .UseLazyLoadingProxies()
+        .UseSqlServer(builder.Configuration.GetConnectionString("DbConnect")));
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        name: "AllowOrigin",
+        builder => {
+            builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+        });
+});
+
+builder.Services.AddControllers();
+
+//Регистрируем фабрику для HttpClient
+builder.Services.AddHttpClient();
+
+//Регистрируем swagger
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseCustomSwagger();
 }
+
+app.UseSerilogRequestLogging();
+app.UseRouting();
+
+app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+                        .SetIsOriginAllowed((host) => true)
+                        .WithOrigins(authOptions.AllowAudiences.ToArray()));
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+
+app.Run();
+
