@@ -1,6 +1,7 @@
 ﻿using BPMSystem.BLL.Interfaces;
 using BPMSystem.DAL.Entities;
 using BPMSystem.DAL.Interfaces;
+using BPMSystem.Web.Communication;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -61,15 +62,13 @@ namespace Services.BPMSystemBLL.Services
             catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
-        public async Task<IEnumerable<Department>> GetAllDepartment()
+        public async Task<DepartmentResponse> GetAllDepartment()
         {
-            IEnumerable<Department> depList;
-            try
-            {
-                depList = await _repository.GetAllDepartment();
-                return depList.ToList();
-            }
-            catch (Exception ex) { throw new Exception(ex.Message); }
+            var departments = await _repository.GetAllDepartment();
+            if (departments == null)
+                return new DepartmentResponse(false, "Не удалось получить данные", null); 
+            else
+                return new DepartmentResponse(true, "Данные получены", departments);
         }
 
         public async Task<Department> GetDepartment(int id)

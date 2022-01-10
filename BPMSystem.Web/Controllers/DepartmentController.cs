@@ -46,23 +46,31 @@ namespace BPMSystem.Web.Controllers
             }
         }
 
+        /// <summary>
+        /// Получить список всех департаментов
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> GetAllDepartments()
+        public async Task<JsonResult> GetAllDepartments()
         {
-            try
+            var response = await _departmentservice.GetAllDepartment();
+            if (response.Success)
             {
-                
-                var depList = await _departmentservice.GetAllDepartment();
+                _logger.LogInformation($"{response.Message} DepartmentController.GetAllDepartments");
+                return Json(new
+                {
+                    Response = response,
+                    IsError = false,
+                    Message = response.Message,
+                });
+            }
 
-                //Маппинг
-                var departments = _mapper.Map<List<ViewModelDepartment>>(depList);
-                return Ok(departments);
-            }
-            catch(Exception ex)
+            _logger.LogError(DepartmentLogs.ERROR_GET_ALL + ". {@ex}", response.Message);
+            return Json(new
             {
-                _logger.LogError(DepartmentLogs.ERROR_GET_ALL + ". {@ex}", ex.Message);
-                throw new Exception(ex.Message);
-            }
+                IsError = true,
+                Message = response.Message,
+            });                
         }
 
         [HttpGet("{id}")]
