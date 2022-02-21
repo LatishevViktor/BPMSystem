@@ -16,5 +16,12 @@ namespace Identity.Common
         public long AccessTokenExpiration { get; set; }
         public long RefreshTokenExpiration { get; set; }
         public string Secret { get; set; }
+
+        public int TokenLife { get; set; }
+
+        public SymmetricSecurityKey GetSymmetricSecurityKey()
+        {
+            return new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Secret));
+        }
     }
 }

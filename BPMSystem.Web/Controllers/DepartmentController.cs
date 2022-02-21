@@ -51,26 +51,20 @@ namespace BPMSystem.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<JsonResult> GetAllDepartments()
+        public async Task<ActionResult<ViewModelDepartment>> GetAllDepartments()
         {
-            var response = await _departmentservice.GetAllDepartment();
-            if (response.Success)
+            try
             {
-                _logger.LogInformation($"{response.Message} DepartmentController.GetAllDepartments");
-                return Json(new
-                {
-                    Response = response,
-                    IsError = false,
-                    Message = response.Message,
-                });
+                var departments = await _departmentservice.GetAllDepartment();
+                _logger.LogInformation("Получение данные по всем отделам");
+                var departmentDto = _mapper.Map<IEnumerable<ViewModelDepartment>>(departments);
+                return Ok(departmentDto);
             }
-
-            _logger.LogError(DepartmentLogs.ERROR_GET_ALL + ". {@ex}", response.Message);
-            return Json(new
+            catch(Exception ex)
             {
-                IsError = true,
-                Message = response.Message,
-            });                
+                _logger.LogError(DepartmentLogs.ERROR_GET_ALL + ". {@ex}", ex.Message);
+                throw new Exception(ex.Message);
+            }
         }
 
         [HttpGet("{id}")]

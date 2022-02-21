@@ -1,1 +1,16 @@
-<p>position works!</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID должности</th>
+      <th scope="col">Наименование</th>
+      <th scope="col">Описание</th>
+    </tr>
+  </thead>
+  <tbody aling="center"> 
+    <tr *ngFor="let pos of positions">
+      <th scope="row">{{pos?.id}}</th>
+      <td>{{pos?.name}}</td>
+      <td>{{pos?.title}}</td>
+    </tr>
+  </tbody>
+</table>
